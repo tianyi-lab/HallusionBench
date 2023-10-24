@@ -3,13 +3,8 @@
 [Fuxiao Liu*](https://fuxiaoliu.github.io/), [Tianrui Guan*](https://tianruiguan.phd), Zongxia Li, Lichang Chen, Yaser Yacoob, Dinesh Manocha, Tianyi Zhou
 This repository is currently a work in progress.
 
-The early report is available [here](https://arxiv.org/abs/2310.14566).
+The early report with case analysis and insights is available [here](https://arxiv.org/abs/2310.14566).
 
-## Dataset
-
-In construction.
-
-## Citation
 If you find our paper useful, please cite our paper:
 ```bibtex
 @misc{liu2023hallusionbench,
@@ -21,3 +16,11 @@ If you find our paper useful, please cite our paper:
       primaryClass={cs.CV}
 }
 ```
+
+## Dataset
+
+In construction.
+
+## Examples and Analysis
+
+![Example 1](./examples/f1.png)
