@@ -22,7 +22,14 @@ If you find our paper useful, please cite our paper:
 In construction.
 
 ## Examples and Analysis
-![Example 1](./examples/f-01.png)
-
-
-
+<p align="center" >
+      <img src="./examples/f-01.png" alt="Example 1" class="center" width="800"/> 
+      <img src="./examples/f-02.png" alt="Example 2" class="center" width="800"/> 
+      <img src="./examples/f-04.png" alt="Example 3" class="center" width="800"/> 
+      <img src="./examples/f-05.png" alt="Example 4" class="center" width="800"/> 
+      <img src="./examples/f-08.png" alt="Example 5" class="center" width="800"/> 
+      <img src="./examples/f-15.png" alt="Example 6" class="center" width="800"/> 
+      <img src="./examples/f-10.png" alt="Example 7" class="center" width="800"/> 
+      <img src="./examples/f-12.png" alt="Example 8" class="center" width="800"/> 
+      <img src="./examples/f-17.png" alt="Example 9" class="center" width="800"/> 
+</p>
