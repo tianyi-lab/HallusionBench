@@ -1,6 +1,7 @@
 # HallusionBench: You See What You Think? Or You Think What You See? An Image-Context Reasoning Benchmark Challenging for GPT-4V(ision), LLaVA-1.5, and Other Multi-modality Models
 
 [Fuxiao Liu*](https://fuxiaoliu.github.io/), [Tianrui Guan*](https://tianruiguan.phd), Zongxia Li, Lichang Chen, Yaser Yacoob, Dinesh Manocha, Tianyi Zhou
+
 This repository is currently a work in progress.
 
 The early report with case analysis and insights is available [here](https://arxiv.org/abs/2310.14566).
@@ -20,6 +21,10 @@ If you find our paper useful, please cite our paper:
 ## Dataset
 
 In construction.
+
+## Leaderboard
+
+Coming Soon!
 
 ## Examples and Analysis
 <p align="center" >
