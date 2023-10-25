@@ -40,3 +40,6 @@ Coming Soon!
       <img src="./examples/f-12.png" alt="Example 8" class="center" width="800"/> 
       <img src="./examples/f-17.png" alt="Example 9" class="center" width="800"/> 
 </p>
+
+## License
+This repository is under [BSD 3-Clause License](LICENSE.md). 
