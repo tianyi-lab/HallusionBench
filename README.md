@@ -19,7 +19,7 @@ If you find our paper useful, please cite our paper:
 ## Updates
 - [-/-] 🔥 The leaderboard and evaluation code will be released this week!
 - [10/24] 🔥 The early report with case analysis and insights is available [here](https://arxiv.org/abs/2310.14566).
-- [10/23] 🔥 Please check our previous work on mitiagting hallucinations of LMMs ["Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"](https://github.com/FuxiaoLiu/LRV-Instruction).
+- [10/23] 🔥 Please check our previous work on mitigating hallucinations of LMMs ["Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"](https://github.com/FuxiaoLiu/LRV-Instruction).
 
 ## Dataset
 
