@@ -76,8 +76,8 @@ use gpt to evaluate the correctness of the answer. The function `evaluate_by_cha
 
 | Model | Question Pair Acc | Figure Acc | Easy Question Acc | Hard Question Acc | Question Acc | Json |
 | ----- | :----: | :----: | :----: | :----: | :----: | :----: |
-| GPT4V <br />(Human Eval) | 12.5984 | 30.4348 | 84.6154 | 30.6569 | 63.3858 | [VD]((https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing)), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
-| GPT4V <br />(GPT Eval) | 12.2047 | 27.5362 | 83.7607 | 29.1971 | 61.0236 | [VD]((https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing)), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
+| GPT4V <br />(Human Eval) | 12.5984 | 30.4348 | 84.6154 | 30.6569 | 63.3858 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
+| GPT4V <br />(GPT Eval) | 12.2047 | 27.5362 | 83.7607 | 29.1971 | 61.0236 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
 | LLaVA-1.5 <br />(Human Eval) | TBD | TBD | TBD | TBD | TBD | TBD |
 | LLaVA-1.5 <br />(GPT Eval) | TBD | TBD | TBD | TBD | TBD | TBD |
 | etc. | TBD | TBD | TBD | TBD | TBD | TBD |
