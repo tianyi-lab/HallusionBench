@@ -60,19 +60,19 @@ use gpt to evaluate the correctness of the answer. The function `evaluate_by_cha
 
 
 ### Definition
-* Visual Dependent (VD) Questions: questions that do not have an affirmative answer without the visual context. 
-      * Easy: Original images that are obtained from Internet.
-      * Hard: Edited images from the original images.
-* Visual Supplement (VS) Questions: questions that can be answered without the visual input; the visual component merely provides supplemental information.
-      * Easy: No visual input. Uncertain answer without hallucination is also considered correct response.
-      * Hard: With visual input. The answer must follow the provided figure and visual context.
+* **Visual Dependent (VD) Questions**: questions that do not have an affirmative answer without the visual context. 
+  * Easy: Original images that are obtained from Internet.
+  * Hard: Edited images from the original images.
+* **Visual Supplement (VS) Questions**: questions that can be answered without the visual input; the visual component merely provides supplemental information.
+  * Easy: No visual input. Uncertain answer without hallucination is also considered correct response.
+  * Hard: With visual input. The answer must follow the provided figure and visual context.
 
 ### Metric
 
 
-* Accuracy per Figure (Consistency Test): Accuracy based on each figure. To make sure the mode truly understand image, we ask variant of questions based on the same knowledge on the same figure, and consider it correct if the model can answer all questions correctly. For example, the model should not give inconsistent responses on the questions "Is A bigger than B?" and "Is B smaller A?".
-* Accuracy per Question: Accuracy of all questions, including easy and hard questions.
-* Accuracy per Question Pair: We ask the same questions on similar images (or, with and without images). We consider the same question text on different visual contexts a **question pair** (usually they come in with an *easy* question and a corresponding *hard* question). This metric calculate accuracy of all question pairs.
+* **Accuracy per Figure (Consistency Test)**: Accuracy based on each figure. To make sure the mode truly understand image, we ask variant of questions based on the same knowledge on the same figure, and consider it correct if the model can answer all questions correctly. For example, the model should not give inconsistent responses on the questions "Is A bigger than B?" and "Is B smaller A?".
+* **Accuracy per Question**: Accuracy of all questions, including easy and hard questions.
+* **Accuracy per Question Pair**: We ask the same questions on similar images (or, with and without images). We consider the same question text on different visual contexts a **question pair** (usually they come in with an *easy* question and a corresponding *hard* question). This metric calculate accuracy of all question pairs.
 
 | Model | Question Pair Acc | Figure Acc | Easy Question Acc | Hard Question Acc | Question Acc | Json |
 | ----- | :----: | :----: | :----: | :----: | :----: | :----: |
