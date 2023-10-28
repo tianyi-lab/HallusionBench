@@ -13,12 +13,17 @@ api_key = ''
 root_dir = "."
 input_file_name = "HallusionBench.tsv"
 save_json_path_vd = "./hallusion_output_vd.json"
+# save_json_path_vd = "./hallusion_output_vd_llava.json"
 save_json_path_vs = "./hallusion_output_vs.json"
+# save_json_path_vs = "./hallusion_output_vs_llava.json"
 # load_json = False
 load_json = True
 model_output_entry = "gpt4v_output"
+# model_output_entry = "llava_1_5_output"
 model_correctness_entry = "gpt4v_output_gpt_check"
+# model_correctness_entry = "llava_1_5_output_gpt_check"
 model_correctness_entry_human = "gpt4v_output_human_check"
+# model_correctness_entry_human = "llava_1_5_output_human_check"
 
 col_idx = {
     'category':0,
@@ -33,6 +38,8 @@ col_idx = {
     'gt_answer':9, 
     'gpt4v_output':10,
     'gpt4v_output_human_check': 11,
+    # 'llava_1_5_output':12,
+    # 'llava_1_5_output_human_check': 13,
 }
 
 
