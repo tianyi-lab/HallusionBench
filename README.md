@@ -61,11 +61,11 @@ use gpt to evaluate the correctness of the answer. The function `evaluate_by_cha
 
 ### Definition
 * **Visual Dependent (VD) Questions**: questions that do not have an affirmative answer without the visual context. 
-  * Easy: Original images that are obtained from Internet.
-  * Hard: Edited images from the original images.
+  * **Easy**: Original images that are obtained from Internet.
+  * **Hard**: Edited images from the original images.
 * **Visual Supplement (VS) Questions**: questions that can be answered without the visual input; the visual component merely provides supplemental information.
-  * Easy: No visual input. Uncertain answer without hallucination is also considered correct response.
-  * Hard: With visual input. The answer must follow the provided figure and visual context.
+  * **Easy**: No visual input. Uncertain answer without hallucination is also considered correct response.
+  * **Hard**: With visual input. The answer must follow the provided figure and visual context.
 
 ### Metric
 
