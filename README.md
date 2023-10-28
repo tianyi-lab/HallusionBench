@@ -38,7 +38,7 @@ To keep evaluation simple, we only provide the question in form of yes/no questi
 
 TODO.
 
-For more details, please refer to [benchmark.py](./benchmark.py).
+For more details about reading the file, please refer to [benchmark.py](./benchmark.py).
 
 ## Evaluation
 
