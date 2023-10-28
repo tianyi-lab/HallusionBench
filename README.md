@@ -45,8 +45,7 @@ For more details about reading the file, please refer to [benchmark.py](./benchm
 To evaluate on our dataset, you only need to implement `generate_answer` function
 in [benchmark.py](./benchmark.py).
 
-To determine the correctness of the response, we provide 
-use gpt to evaluate the correctness of the answer. The function `evaluate_by_chatgpt` is implemented in [benchmark.py](./benchmark.py).
+To determine the correctness of the response, we provide GPT4 API to evaluate the correctness of the answer. The function `evaluate_by_chatgpt` is implemented in [benchmark.py](./benchmark.py).
 
 ### Reproduce GPT4V results on leaderboard
 
