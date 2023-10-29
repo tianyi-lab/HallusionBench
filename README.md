@@ -75,8 +75,8 @@ To determine the correctness of the response, we provide GPT4 API to evaluate th
 
 | Model | Question Pair Acc | Figure Acc | Easy Question Acc | Hard Question Acc | Question Acc | Json |
 | ----- | :----: | :----: | :----: | :----: | :----: | :----: |
-| GPT4V <br />(Human Eval) | 12.5984 | 30.4348 | 84.6154 | 30.6569 | 63.3858 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
-| GPT4V <br />(GPT Eval) | 12.2047 | 27.5362 | 83.7607 | 29.1971 | 61.0236 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
+| GPT4V <br />Sep 25, 2023 Version <br />(Human Eval) | 12.5984 | 30.4348 | 84.6154 | 30.6569 | 63.3858 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
+| GPT4V <br />Sep 25, 2023 Version <br />(GPT Eval) | 12.2047 | 27.5362 | 83.7607 | 29.1971 | 61.0236 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
 | LLaVA-1.5 <br />(Human Eval) | TBD | TBD | TBD | TBD | TBD | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
 | LLaVA-1.5 <br />(GPT Eval) | 4.3307 | 7.2464 | 49.5726 | 26.2774 | 41.7323 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
 | etc. | TBD | TBD | TBD | TBD | TBD | TBD |
