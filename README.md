@@ -32,7 +32,7 @@ To keep evaluation simple, we only provide the question in form of yes/no questi
 
 | Updated on      | Questions and Annotations | Figures | Question Count | Figure Count |
 | ----------- | :----: | :----: | :----: | :----: |
-| Oct 27, 2023     | [HallusionBench.tsv](https://drive.google.com/file/d/1p9BJw09l0ZXhv-owIEkXithLLAQrG60U/view?usp=sharing) | [hallusion_bench.zip](https://drive.google.com/file/d/1sAXmVg3I3A6gjb8JnA6HWjSv1ntrSBki/view?usp=drive_link)         | 254  | 69 |
+| Oct 27, 2023     | [HallusionBench.json](./HallusionBench.json) | [hallusion_bench.zip](https://drive.google.com/file/d/1sAXmVg3I3A6gjb8JnA6HWjSv1ntrSBki/view?usp=drive_link)         | 254  | 69 |
 
 ### Evaluation
 
@@ -50,7 +50,8 @@ cd ./HallusionBench
 ```
 The key `visual_input`means whether the question needs visual input like images. If `visual_input=1`, it means the question need visual input. If `visual_input=0`, it means the question doesn't need visual input. It's the text-only question.
 
-4. Run your model on `./HallusionBench.json` and save the ouput file as `./HallusionBench_result_sample.json`. You need to add the output of your in the key `model_prediction`.
+4. Run your model on `./HallusionBench.json` and save the ouput file as `./HallusionBench_result_sample.json`. You need to add the output of your in the key `'model_prediction'`.
+5. 
 
 
 
@@ -62,7 +63,8 @@ The key `visual_input`means whether the question needs visual input like images.
 
 2. (Optional) If you don't have access to GPT API, you don't need to run it since we have saved evaluation results. They can be downloaded for [Visual Dependent](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing) and [Visual Supplement](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing). Put the json files in the root directory of this repo, or set `save_json_path_vd` and `save_json_path_vd` in [benchmark.py](./benchmark.py) to their respective locations.
 
-3. Run `python benchmark.py`.
+3. Run `python evaluation.py`. We have provide API key in the script and use GPT4 to evaluate the results. You can also use your own API key by editing the [here](./evaluation.py/#9)
+   
 
 ## Leaderboard
 
