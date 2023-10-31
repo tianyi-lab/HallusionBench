@@ -12,7 +12,7 @@ api_key = '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'
 ### to evaluate your method, implement and run generate_answer function!
 
 root_dir = "."
-input_file_name = "HallusionBench.tsv"
+input_file_name = "HallusionBench_result.json"
 save_json_path_vd = "./hallusion_output_vd.json"
 save_json_path_vs = "./hallusion_output_vs.json"
 # load_json = False
@@ -245,7 +245,7 @@ if __name__ == "__main__":
 
     data_vd = []
     data_vs = []
-    with open("HallusionBench_result_sample.json") as json_file:
+    with open(input_file_name) as json_file:
         datas = json.load(json_file)
 
     for data in tqdm(datas):
