@@ -50,9 +50,9 @@ cd ./HallusionBench
 ```
 The key `visual_input`means whether the question needs visual input like images. If `visual_input=1`, it means the question need visual input. If `visual_input=0`, it means the question doesn't need visual input. It's the text-only question.
 
-`./HallusionBench00.json` is for the model which can only take one image each time ([example](./examples/1_1.png)). `./HallusionBench_v01.json` is for the model which can take multiple images each time  ([example](./examples/1_1)) like GPT-4V. 
+`./HallusionBench_v00.json` is for the model which can only take one image each time ([example](./examples/1_1.png)). `./HallusionBench_v01.json` is for the model which can take multiple images each time  ([example](./examples/1_1)) like GPT-4V. 
 
-A data sample from `./HallusionBench01.json`
+A data sample from `./HallusionBench_v01.json`
 
 ```
 {'category': 'VD', 'subcategory': 'video', 'visual_input': '1', 'set_id': '7', 'figure_id': '1', 'sample_note': 'plug', 'question_id': '2', 'question': 'The plug is put into the power outlet. According to the positive sequence of the images, are they in the correct order?', 'gt_answer_details': 'no', 'gt_answer': '0', 'filename': './hallusion_bench/VD/video/7_1'}
