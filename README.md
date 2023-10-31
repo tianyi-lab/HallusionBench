@@ -44,20 +44,11 @@ cd ./HallusionBench
 
 2. Download the images [hallusion_bench.zip](https://drive.google.com/file/d/1sAXmVg3I3A6gjb8JnA6HWjSv1ntrSBki/view?usp=drive_link) and unzip the folder in the same directory.
    
-3. The Questions and image locations are saved in `./HallusionBench_v00.json`. The data sample are as follows:
+3. The Questions and image locations are saved in `./HallusionBench.json`. The data sample are as follows:
 ```
 {'category': 'VD', 'subcategory': 'illusion', 'visual_input': '1', 'set_id': '0', 'figure_id': '0', 'sample_note': 'circle', 'question_id': '0', 'question': 'Is the right orange circle the same size as the left orange circle?', 'gt_answer_details': 'The right orange circle is the same size as the left orange circle.', 'gt_answer': '1', 'filename': './hallusion_bench/VD/illusion/0_0.png'}
 ```
 The key `visual_input`means whether the question needs visual input like images. If `visual_input=1`, it means the question need visual input. If `visual_input=0`, it means the question doesn't need visual input. It's the text-only question.
-
-`./HallusionBench_v00.json` is for the model which can only take one image each time ([example](./examples/1_1.png)). `./HallusionBench_v01.json` is for the model which can take multiple images each time  ([example](./examples/1_1)) like GPT-4V. 
-
-A data sample from `./HallusionBench_v01.json`
-
-```
-{'category': 'VD', 'subcategory': 'video', 'visual_input': '1', 'set_id': '7', 'figure_id': '1', 'sample_note': 'plug', 'question_id': '2', 'question': 'The plug is put into the power outlet. According to the positive sequence of the images, are they in the correct order?', 'gt_answer_details': 'no', 'gt_answer': '0', 'filename': './hallusion_bench/VD/video/7_1'}
-```
-
 
 4. Run your model on `./HallusionBench.json` and save the ouput file as `./HallusionBench_result.json`
 
