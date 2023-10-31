@@ -56,7 +56,7 @@ The key `visual_input`means whether the question needs visual input like images.
 python evaluation.py
 ```
 
-We provide the API key in the script for convenience. You can also use your own API key for GPT4 evaluation by editing the code [here](./evaluation.py#L9).
+You can use your own API key for GPT4 evaluation by editing the code [here](./evaluation.py#L9). We can also provide API key for evaluation if you need.
 
 
 
