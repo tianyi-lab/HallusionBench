@@ -36,7 +36,7 @@ To keep evaluation simple, we only provide the question in form of yes/no questi
 
 ### Evaluation
 
-1. git the repo
+1. Clone the repo.
 ```
 git clone https://github.com/tianyi-lab/HallusionBench.git
 cd ./HallusionBench
@@ -44,7 +44,7 @@ cd ./HallusionBench
 
 2. Download the images [hallusion_bench.zip](https://drive.google.com/file/d/1sAXmVg3I3A6gjb8JnA6HWjSv1ntrSBki/view?usp=drive_link) and unzip the folder in the same directory.
    
-3. The Questions and image locations are saved in `./HallusionBench.json`. The data sample are as follows:
+3. The questions and image locations are saved in `./HallusionBench.json`. The data sample are as follows:
 ```
 {'category': 'VD', 'subcategory': 'illusion', 'visual_input': '1', 'set_id': '0', 'figure_id': '0', 'sample_note': 'circle', 'question_id': '0', 'question': 'Is the right orange circle the same size as the left orange circle?', 'gt_answer_details': 'The right orange circle is the same size as the left orange circle.', 'gt_answer': '1', 'filename': './hallusion_bench/VD/illusion/0_0.png'}
 ```
@@ -56,7 +56,7 @@ The key `visual_input`means whether the question needs visual input like images.
 python evaluation.py
 ```
 
-We provide the API key in the script for convenience. You can also use your own API key for GPT4 evaluation by editing the code [here](./evaluation.py#L9)
+We provide the API key in the script for convenience. You can also use your own API key for GPT4 evaluation by editing the code [here](./evaluation.py#L9).
 
 
 
