@@ -51,7 +51,13 @@ cd ./HallusionBench
 The key `visual_input`means whether the question needs visual input like images. If `visual_input=1`, it means the question need visual input. If `visual_input=0`, it means the question doesn't need visual input. It's the text-only question.
 
 4. Run your model on `./HallusionBench.json` and save the ouput file as `./HallusionBench_result_sample.json`. You need to add the output of your in the key `'model_prediction'`.
-5. 
+5. Finally, run the following code for evaluation:
+```
+python evaluation.py
+```
+
+We provide the API key in the script for convenience. You can also use your own API key for GPT4 evaluation by editing the code [here](./evaluation.py#L9)
+
 
 
 
