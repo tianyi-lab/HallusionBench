@@ -93,7 +93,7 @@ We provide the API key in the script for convenience. You can also use your own 
 
 2. (Optional) If you don't have access to GPT API, you don't need to run it since we have saved evaluation results. They can be downloaded for [Visual Dependent](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing) and [Visual Supplement](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing). Put the json files in the root directory of this repo, or set `save_json_path_vd` and `save_json_path_vd` in [benchmark.py](./benchmark.py) to their respective locations.
 
-3. Run `python evaluation.py`. We have provide API key in the script and use GPT4 to evaluate the results. You can also use your own API key by editing the [here](./evaluation.py/#9)
+3. Run `python benchmark.py`.
 
 ## Examples and Analysis
 <p align="center" >
