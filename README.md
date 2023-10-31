@@ -22,7 +22,7 @@ If you find our paper useful, please cite our paper:
 
 ## Updates
 - [-/-] 🔥 Evaluation result on LLaVA-1.5 will be updated this week. More model results to come!
-- [10/27] 🔥 The leaderboard and evaluation code is released! **Welcome to update your model on our leaderboard!**
+- [10/27] 🔥 The [leaderboard](https://paperswithcode.com/sota/visual-question-answering-vqa-on-3) and evaluation code is released! **Welcome to update your model on our leaderboard!**
 - [10/24] 🔥 The early report with case analysis and insights is available [here](https://arxiv.org/abs/2310.14566).
 - [10/23] 🔥 Please check our previous work on mitigating hallucinations of LMMs ["Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"](https://github.com/FuxiaoLiu/LRV-Instruction).
 
