@@ -60,18 +60,6 @@ We provide the API key in the script for convenience. You can also use your own 
 
 
 
-
-
-
-### Reproduce GPT4V results on leaderboard
-
-1. We saved the ouput of GPT4V with our annotation. Put `HallusionBench.tsv` in the root directory of this repo, or set `input_file_name` in [benchmark.py](./benchmark.py) to the location of the `HallusionBench.tsv` file.
-
-2. (Optional) If you don't have access to GPT API, you don't need to run it since we have saved evaluation results. They can be downloaded for [Visual Dependent](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing) and [Visual Supplement](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing). Put the json files in the root directory of this repo, or set `save_json_path_vd` and `save_json_path_vd` in [benchmark.py](./benchmark.py) to their respective locations.
-
-3. Run `python evaluation.py`. We have provide API key in the script and use GPT4 to evaluate the results. You can also use your own API key by editing the [here](./evaluation.py/#9)
-   
-
 ## Leaderboard
 
 
@@ -97,6 +85,15 @@ We provide the API key in the script for convenience. You can also use your own 
 | LLaVA-1.5 <br />(Human Eval) | 2.7559 | 8.6957 | 40.1709 | 27.7372 | 38.189 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
 | LLaVA-1.5 <br />(GPT Eval) | 4.3307 | 7.2464 | 48.7179 | 26.2774 | 41.3386 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
 | etc. | TBD | TBD | TBD | TBD | TBD | TBD |
+
+
+### Reproduce GPT4V results on leaderboard
+
+1. We saved the ouput of GPT4V with our annotation. Put `HallusionBench.tsv` in the root directory of this repo, or set `input_file_name` in [benchmark.py](./benchmark.py) to the location of the [HallusionBench.tsv](https://drive.google.com/file/d/1p9BJw09l0ZXhv-owIEkXithLLAQrG60U/view?usp=sharing) file.
+
+2. (Optional) If you don't have access to GPT API, you don't need to run it since we have saved evaluation results. They can be downloaded for [Visual Dependent](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing) and [Visual Supplement](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing). Put the json files in the root directory of this repo, or set `save_json_path_vd` and `save_json_path_vd` in [benchmark.py](./benchmark.py) to their respective locations.
+
+3. Run `python evaluation.py`. We have provide API key in the script and use GPT4 to evaluate the results. You can also use your own API key by editing the [here](./evaluation.py/#9)
 
 ## Examples and Analysis
 <p align="center" >
