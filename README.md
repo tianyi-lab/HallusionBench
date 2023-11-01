@@ -10,13 +10,11 @@ Large language models (LLMs), after being aligned with vision models and integra
 
 If you find our paper useful, please cite our paper:
 ```bibtex
-@misc{liu2023hallusionbench,
-      title={HallusionBench: You See What You Think? Or You Think What You See? An Image-Context Reasoning Benchmark Challenging for GPT-4V(ision), LLaVA-1.5, and Other Multi-modality Models}, 
-      author={Fuxiao Liu and Tianrui Guan and Zongxia Li and Lichang Chen and Yaser Yacoob and Dinesh Manocha and Tianyi Zhou},
-      year={2023},
-      eprint={2310.14566},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{liu2023hallusionbench,
+  title={HallusionBench: You See What You Think? Or You Think What You See? An Image-Context Reasoning Benchmark Challenging for GPT-4V (ision), LLaVA-1.5, and Other Multi-modality Models},
+  author={Liu, Fuxiao and Guan, Tianrui and Li, Zongxia and Chen, Lichang and Yacoob, Yaser and Manocha, Dinesh and Zhou, Tianyi},
+  journal={arXiv preprint arXiv:2310.14566},
+  year={2023}
 }
 ```
 
