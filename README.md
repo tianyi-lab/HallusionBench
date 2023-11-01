@@ -16,6 +16,12 @@ If you find our paper useful, please cite our paper:
   journal={arXiv preprint arXiv:2310.14566},
   year={2023}
 }
+@article{liu2023aligning,
+  title={Aligning Large Multi-Modal Model with Robust Instruction Tuning},
+  author={Liu, Fuxiao and Lin, Kevin and Li, Linjie and Wang, Jianfeng and Yacoob, Yaser and Wang, Lijuan},
+  journal={arXiv preprint arXiv:2306.14565},
+  year={2023}
+}
 ```
 
 ## Updates
