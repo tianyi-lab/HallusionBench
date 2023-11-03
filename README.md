@@ -84,15 +84,15 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ut
 
 | Model | Question Pair Acc | Figure Acc | Easy Question Acc | Hard Question Acc | Question Acc | Json |
 | ----- | :----: | :----: | :----: | :----: | :----: | :----: |
-| GPT4V <br />Sep 25, 2023 Version <br />(Human Eval) | 12.5984 | 30.4348 | 84.6154 | 30.6569 | 63.3858 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
-| GPT4V <br />Sep 25, 2023 Version <br />(GPT Eval) | 12.2047 | 27.5362 | 83.7607 | 29.1971 | 61.0236 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
-| LLaVA-1.5 <br />(Human Eval) | 2.7559 | 8.6957 | 40.1709 | 27.7372 | 38.189 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
-| LLaVA-1.5 <br />(GPT Eval) | 4.3307 | 7.2464 | 48.7179 | 26.2774 | 41.3386 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
-| LRV-Instruction <br />(GPT Eval) | 1.5748 | 8.6957 | 35.0427 | 16.0584 | 27.9528 | [Results](), [VD](), [VS]() |
-| mPLUG-Owl <br />(GPT Eval) | 2.3622 | 11.5942 | 30.7692 | 28.4672 | 34.6457 | [Results](), [VD](), [VS]() |
-| GenerativeImage2Text <br />(GPT Eval) | 4.3307 | 8.6957 | 64.9573 | 24.0876 | 46.063 | [Results](), [VD](), [VS]() |
-| Qwen-VL <br />(GPT Eval) | 9.0551 | 24.6377 | 67.5214 | 28.4672 | 51.5748 | [Results](), [VD](), [VS]() |
-| BLIP-Instruct <br />(GPT Eval) | 4.7244 | 5.7971 | 52.9915 | 27.0073 | 43.3071 | [Results](), [VD](), [VS]() |
+| **GPT4V** <br />Sep 25, 2023 Version <br />(Human Eval) | 12.5984 | 30.4348 | 84.6154 | 30.6569 | 63.3858 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
+| **GPT4V** <br />Sep 25, 2023 Version <br />(GPT Eval) | 12.2047 | 27.5362 | 83.7607 | 29.1971 | 61.0236 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
+| **LLaVA-1.5** <br />(Human Eval) | 2.7559 | 8.6957 | 40.1709 | 27.7372 | 38.189 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
+| **LLaVA-1.5** <br />(GPT Eval) | 4.3307 | 7.2464 | 48.7179 | 26.2774 | 41.3386 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
+| **LRV-Instruction** <br />(GPT Eval) | 1.5748 | 8.6957 | 35.0427 | 16.0584 | 27.9528 | [Results](), [VD](), [VS]() |
+| **mPLUG-Owl** <br />(GPT Eval) | 2.3622 | 11.5942 | 30.7692 | 28.4672 | 34.6457 | [Results](), [VD](), [VS]() |
+| **GenerativeImage2Text** <br />(GPT Eval) | 4.3307 | 8.6957 | 64.9573 | 24.0876 | 46.063 | [Results](), [VD](), [VS]() |
+| **Qwen-VL** <br />(GPT Eval) | 9.0551 | 24.6377 | 67.5214 | 28.4672 | 51.5748 | [Results](), [VD](), [VS]() |
+| **BLIP-Instruct** <br />(GPT Eval) | 4.7244 | 5.7971 | 52.9915 | 27.0073 | 43.3071 | [Results](), [VD](), [VS]() |
 | etc. | TBD | TBD | TBD | TBD | TBD | TBD |
 
 
