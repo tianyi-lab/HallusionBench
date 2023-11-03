@@ -7,7 +7,6 @@ import os
 from utils import *
 
 import openai
-api_key = ''
 
 ### to evaluate your method, implement and run generate_answer function!
 

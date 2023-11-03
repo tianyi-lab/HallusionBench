@@ -60,7 +60,7 @@ The key `visual_input`means whether the question needs visual input like images.
 python evaluation.py
 ```
 
-You can use your own API key for GPT4 evaluation by editing the code [here](./evaluation.py#L9). We can also provide API key for evaluation if you need.
+You can use your own API key for GPT4 evaluation by editing the code [here](./utils.py#L10).
 
 
 
@@ -88,6 +88,8 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ev
 | GPT4V <br />Sep 25, 2023 Version <br />(GPT Eval) | 12.2047 | 27.5362 | 83.7607 | 29.1971 | 61.0236 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
 | LLaVA-1.5 <br />(Human Eval) | 2.7559 | 8.6957 | 40.1709 | 27.7372 | 38.189 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
 | LLaVA-1.5 <br />(GPT Eval) | 4.3307 | 7.2464 | 48.7179 | 26.2774 | 41.3386 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
+| LRV-Instruction <br />(GPT Eval) | 1.5748 | 8.6957 | 35.0427 | 16.0584 | 27.9528 | [Results](), [VD](), [VS]() |
+| mPLUG-Owl <br />(GPT Eval) | 2.3622 | 11.5942 | 30.7692 | 28.4672 | 34.6457 | [Results](), [VD](), [VS]() |
 | etc. | TBD | TBD | TBD | TBD | TBD | TBD |
 
 

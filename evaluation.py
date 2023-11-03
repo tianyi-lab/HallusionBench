@@ -8,8 +8,7 @@ import time
 from utils import *
 
 import openai
-api_key = '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'
-#api_key = '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'
+
 
 ### to evaluate your method, implement and run generate_answer function!
 

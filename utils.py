@@ -7,6 +7,7 @@ import os
 import time
 import openai
 
+api_key = ''
 
 
 def get_image_file_location(root, row):
