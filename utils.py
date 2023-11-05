@@ -56,7 +56,46 @@ def evaluate_by_chatgpt(data, output_entry, correctness_entry, gpt_model="gpt-4"
 
     return output
 
+def check_same_by_chatgpt(data, output_entry, gpt_model="gpt-4", load_json=False, save_json_path="./hallusion_output.json"):
 
+    orig_response = {}
+
+    for r in data:
+        if str(r["figure_id"]) == "0":
+            key = "_".join([r["category"], r["subcategory"], str(r["set_id"])])
+            orig_response[key] = r[output_entry]
+
+    for sample in tqdm(data):
+        if "same" not in sample.keys():
+            key = "_".join([sample["category"], sample["subcategory"], str(sample["set_id"])])
+            response2 = orig_response[key]
+            prompt = 'Imagine you are an intelligent teacher. Thoroughly read the two responses to two different questions. Assess the consistency of the information provided within those two responses. '
+            prompt += 'You do not know the specific questions, but you can asssess the consistency among the two responses by checking for logical conflicts if both responses are correct. '
+            prompt += 'If response1 does not conflict with response2, please generate “same”. Otherwise, generate "different". \n\n response1:'
+            prompt += sample[output_entry]
+            prompt += '\nresponse2: '
+            prompt += response2
+            prompt += '\nOutput:'
+
+            response = openai.ChatCompletion.create(model=gpt_model, messages=[{"role": "user", "content": prompt}], api_key=api_key)
+
+            output_text = response['choices'][0]['message']['content']
+
+            gpt_same = "0"
+
+            if 'same' in output_text.lower(): 
+                gpt_same = "1"
+
+            elif 'different' in output_text.lower():
+                gpt_same = "0"
+
+
+            sample["same"] = gpt_same
+
+            with open(save_json_path, 'w') as f:
+                json.dump(data, f)
+
+    return data
 
 def get_eval_fig(data): # per figure
 
