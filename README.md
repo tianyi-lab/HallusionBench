@@ -90,6 +90,7 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ut
 | **LLaVA-1.5** <br />(GPT Eval) | 7.6923 |  8.1081  | 38.4615 | 30.9278  | 41.2639 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
 | **LRV-Instruction** <br />(GPT Eval) | 3.4188 | 8.6957 | 35.8974 | 17.9487 | 28.3465 | [Results](), [VD](), [VS]() |
 | **mPLUG-Owl** <br />(GPT Eval) | 5.1282 | 11.5942 | 31.6239 | 31.6239 | 34.252 | [Results](), [VD](), [VS]() |
+| **mPLUG-Owlv2** <br />(GPT Eval) | 9.4017 | 13.0435 | 49.5726 | 31.6239 | 42.5197 | [Results](), [VD](), [VS]() |
 | **GIT** <br />(GPT Eval) | 8.547 | 8.6957 | 64.9573 | 28.2051 | 46.063 | [Results](), [VD](), [VS]() |
 | **Qwen-VL** <br />(GPT Eval) | 19.6581 | 24.6377 | 66.6667 | 33.3333 | 51.1811 | [Results](), [VD](), [VS]() |
 | **InstructBLIP** <br />(GPT Eval) | 10.2564 | 5.7971 | 53.8462 | 31.6239 | 43.3071 | [Results](), [VD](), [VS]() |
