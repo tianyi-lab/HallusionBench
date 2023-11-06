@@ -132,17 +132,39 @@ def get_eval_fig(data): # per figure
     eval_fig_stat["score"] = eval_fig_stat["score"] / eval_fig_stat["total"]
     return eval_fig_stat
 
-def get_eval_all(data): # per question
+def get_eval_all(data, model_correctness_entry): # per question
 
     eval_all_dict = dict()
+    eval_all_stat = {}
+    eval_all_stat["LH"] = 0
+    eval_all_stat["VI"] = 0
+    eval_all_stat["Mix"] = 0
 
     for r in data:
         name = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["figure_id"]), str(r["question_id"])])
         assert name not in eval_all_dict 
         
         eval_all_dict[name] = r["correct"]
+        
+        if str(r["category"]) == "VD": # VD
+            if str(r["figure_id"]) == "0":
+                if str(r[model_correctness_entry]) == "0" or str(r[model_correctness_entry]) == "2":
+                    eval_all_stat["VI"] += 1
+            else:
+                if str(r[model_correctness_entry]) == "0":
+                    eval_all_stat["Mix"] += 1
+                elif str(r[model_correctness_entry]) == "2":
+                    eval_all_stat["VI"] += 1
+        else: # VS
+            if str(r["visual_input"]) == "0": # no visual
+                if str(r[model_correctness_entry]) == "0":
+                    eval_all_stat["LH"] += 1
+            else: # original visual or modified visual (isual_input == 1 or 2)
+                if str(r[model_correctness_entry]) == "0":
+                    eval_all_stat["Mix"] += 1
+                elif str(r[model_correctness_entry]) == "2":
+                    eval_all_stat["VI"] += 1
 
-    eval_all_stat = {}
     eval_all_stat["note"] = "all accuracy per question"
     eval_all_stat["total"] = len(eval_all_dict.keys())
     eval_all_stat["correct"] = np.count_nonzero(list(eval_all_dict.values()))

@@ -90,9 +90,9 @@ if __name__ == "__main__":
     data_vs = assign_correctness(data_vs, correctness_entry=model_correctness_entry_human)
     data = data_vd + data_vs
 
-    all_data = get_eval_all(data)
-    all_vd = get_eval_all(data_vd)
-    all_vs = get_eval_all(data_vs)
+    all_data = get_eval_all(data, model_correctness_entry_human)
+    all_vd = get_eval_all(data_vd, model_correctness_entry_human)
+    all_vs = get_eval_all(data_vs, model_correctness_entry_human)
 
     print("##### Human Evaluate #####")
 
@@ -153,9 +153,9 @@ if __name__ == "__main__":
     data_vs = assign_correctness(data_vs, correctness_entry=model_correctness_entry)
     data = data_vd + data_vs
 
-    all_data = get_eval_all(data)
-    all_vd = get_eval_all(data_vd)
-    all_vs = get_eval_all(data_vs)
+    all_data = get_eval_all(data, model_correctness_entry)
+    all_vd = get_eval_all(data_vd, model_correctness_entry)
+    all_vs = get_eval_all(data_vs, model_correctness_entry)
 
     # question level
     table1 = [["per question", "Total"], 
