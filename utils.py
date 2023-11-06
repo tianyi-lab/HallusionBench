@@ -277,7 +277,7 @@ def get_eval_pair_easy(data):
     counter = 0
 
     for r in data:
-        if str(r["figure_id"]) != "0":
+        if str(r["visual_input"]) == "2":
             continue
         name = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["question_id"])])
         if name in get_eval_pair_dict:
@@ -308,7 +308,7 @@ def get_eval_pair_hard(data):
     counter = 0
 
     for r in data:
-        if str(r["figure_id"]) == "0":
+        if str(r["visual_input"]) != "2":
             continue
         name = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["question_id"])])
         if name in get_eval_pair_dict:
