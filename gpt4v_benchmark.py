@@ -38,8 +38,8 @@ col_idx = {
     'gt_answer':9, 
     'gpt4v_output':10,
     'gpt4v_output_human_check': 11,
-    # 'llava_1_5_output':12,
-    # 'llava_1_5_output_human_check': 13,
+    'llava_1_5_output':12,
+    'llava_1_5_output_human_check': 13,
 }
 
 
@@ -107,13 +107,13 @@ if __name__ == "__main__":
     q_acc_human = round(100 * all_data["correct"]/all_data["total"], 4)
 
 
-    all_data = get_eval_pair_all(data)
+    all_data = get_eval_pair_all(data, model_correctness_entry_human)
     easy = get_eval_pair_easy(data)
     hard = get_eval_pair_hard(data)
-    all_vd = get_eval_pair_all(data_vd)
+    all_vd = get_eval_pair_all(data_vd, model_correctness_entry_human)
     easy_vd = get_eval_pair_easy(data_vd)
     hard_vd = get_eval_pair_hard(data_vd)
-    all_vs = get_eval_pair_all(data_vs)
+    all_vs = get_eval_pair_all(data_vs, model_correctness_entry_human)
     easy_vs = get_eval_pair_easy(data_vs)
     hard_vs = get_eval_pair_hard(data_vs)
     # question pair level
@@ -168,13 +168,13 @@ if __name__ == "__main__":
 
     q_acc_gpt = round(100 * all_data["correct"]/all_data["total"], 4)
 
-    all_data = get_eval_pair_all(data)
+    all_data = get_eval_pair_all(data, model_correctness_entry)
     easy = get_eval_pair_easy(data)
     hard = get_eval_pair_hard(data)
-    all_vd = get_eval_pair_all(data_vd)
+    all_vd = get_eval_pair_all(data_vd, model_correctness_entry)
     easy_vd = get_eval_pair_easy(data_vd)
     hard_vd = get_eval_pair_hard(data_vd)
-    all_vs = get_eval_pair_all(data_vs)
+    all_vs = get_eval_pair_all(data_vs, model_correctness_entry)
     easy_vs = get_eval_pair_easy(data_vs)
     hard_vs = get_eval_pair_hard(data_vs)
     # question pair level
@@ -209,9 +209,9 @@ if __name__ == "__main__":
 
 
     print("##### Question Stats #####")
-    print("Easy Questions: " + str(easy_vd["total"]) + "(Visual Dependent) + " + str(easy_vs["total"]) + "(Visual Supplement)")
-    print("Hard Questions: " + str(hard_vd["total"]) + "(Visual Dependent) + " + str(hard_vs["total"]) + "(Visual Supplement)")
-    print("Total Questions: " + str(all_data["total"]))
+    print("Easy Questions: " + str(easy_vd["total_q"]) + "(Visual Dependent) + " + str(easy_vs["total_q"]) + "(Visual Supplement)")
+    print("Hard Questions: " + str(hard_vd["total_q"]) + "(Visual Dependent) + " + str(hard_vs["total_q"]) + "(Visual Supplement)")
+    print("Total Questions: " + str(all_data["total_q"]))
 
 
     print("##### Figure Stats #####")
@@ -227,3 +227,5 @@ if __name__ == "__main__":
     leaderboard = PrettyTable(table[0])
     leaderboard.add_rows(table[1:])
     print(leaderboard)
+
+    print(all_data["total"], all_data["wrong"], all_data["LH"], all_data["VI"], all_data["Mix"])

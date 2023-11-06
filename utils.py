@@ -62,12 +62,12 @@ def check_same_by_chatgpt(data, output_entry, gpt_model="gpt-4", load_json=False
 
     for r in data:
         if str(r["figure_id"]) == "0":
-            key = "_".join([r["category"], r["subcategory"], str(r["set_id"])])
+            key = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["question_id"])])
             orig_response[key] = r[output_entry]
 
     for sample in tqdm(data):
         if "same" not in sample.keys():
-            key = "_".join([sample["category"], sample["subcategory"], str(sample["set_id"])])
+            key = "_".join([sample["category"], sample["subcategory"], str(sample["set_id"]), str(sample["question_id"])])
             response2 = orig_response[key]
             prompt = 'Imagine you are an intelligent teacher. Thoroughly read the two responses to two different questions. Assess the consistency of the information provided within those two responses. '
             prompt += 'You do not know the specific questions, but you can asssess the consistency among the two responses by checking for logical conflicts if both responses are correct. '
@@ -150,10 +150,18 @@ def get_eval_all(data): # per question
 
     return eval_all_stat
 
-def get_eval_pair_all(data): # per question pair
+def get_eval_pair_all(data, model_correctness_entry): # per question pair
+
+    orig_correctness = dict()
+    counter = 0
+
+    for r in data:
+        if str(r["figure_id"]) == "0":
+            key = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["question_id"])])
+            orig_correctness[key] = r[model_correctness_entry]
 
     get_eval_pair_dict = dict()
-    count = 0 
+    get_analysis_pair_dict = dict()
 
     for r in data:
         name = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["question_id"])])
@@ -161,26 +169,113 @@ def get_eval_pair_all(data): # per question pair
             c, t = get_eval_pair_dict[name]
             get_eval_pair_dict[name] = (c + r["correct"], t+1)
         else:
-            get_eval_pair_dict[name] = (r["correct"], 1)        
-        count += 1
+            get_eval_pair_dict[name] = (r["correct"], 1)    
+        counter += 1    
+
+        # (LH, VI)
+        analysis = (0, 0)
+        if str(r["figure_id"]) == "0":  # when it's original question
+            if str(r["category"]) == "VD": # VD
+                if str(r[model_correctness_entry]) == "0" or str(r[model_correctness_entry]) == "2":
+                    analysis = (0, 1) # VI -- get original image wrong, bad vision
+            else: # VS
+                if str(r[model_correctness_entry]) == "0":
+                    analysis = (1, 0) # LH -- wrong answer without visual, making things up
+        else: # when it's not original question
+            key = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["question_id"])])
+            orig_c = orig_correctness[key]
+            if str(r["category"]) == "VD": # VD
+                if str(orig_c) == "1" and str(r[model_correctness_entry]) == "0":
+                    if str(r["same"]) == "1":
+                        analysis = (1, 1) # Mixed -- orig correct but modified wrong, with the same answer as the original question, could be bad vision or language hallucination
+                    else:
+                        analysis = (0, 1) # VI -- orig correct but modified wrong, but answer differently, only due to bad vision
+                elif str(orig_c) == "1" and str(r[model_correctness_entry]) == "2":
+                    analysis = (0, 1) # VI -- orig correct but modified uncertain, bad vision
+                elif str(r[model_correctness_entry]) == "0" or str(r[model_correctness_entry]) == "2":
+                # when orig_c == 0 or 2 and current is wrong
+                    analysis = (0, 1) # VI -- when original is wrong and current is wrong, bad vision
+            else: # VS
+                key = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["question_id"])])
+                orig_c = orig_correctness[key]
+                if str(orig_c) == "0": # No visual wrong
+                    if str(r[model_correctness_entry]) == "0" and str(r["same"]) == "1":
+                        analysis = (1, 0) # LH -- same answer with and without visual, LH overtake visual
+                    elif str(r[model_correctness_entry]) == "0":
+                        analysis = (1, 1) # LH -- different answer with and without visual but both wrong, both language and visual are bad
+                    elif str(r[model_correctness_entry]) == "2":
+                        analysis = (1, 1) # Mixed -- no visual wrong, but with visual uncertain, could be either
+                elif str(orig_c) == "2":# No visual uncertain
+                    if str(r[model_correctness_entry]) == "0" or str(r[model_correctness_entry]) == "2":
+                        analysis = (0, 1) # VI -- no visual uncertain, with visual still wrong or uncertain, visual capability is bad
+                else: # No visual correct
+                    if str(r[model_correctness_entry]) == "2":
+                        analysis = (0, 1) # VI -- no visual correct, with visual uncertain, visual capability is bad
+                    elif str(r[model_correctness_entry]) == "0": # current is wrong
+                        if str(r["visual_input"]) == "1": # common sense visual question
+                            analysis = (0, 1) # VI -- no visual correct, with visual wrong on common sense question, visual capability is bad
+                        elif str(r["visual_input"]) == "2": # counter-common sense visual question
+                            if str(r["same"]) == "1":
+                                analysis = (1, 0) # LH -- with visual correct, but modified question wrong with the same answer, not considering visual so the error is attributed to Language
+                            else:
+                                analysis = (0, 1) # VI -- with visual correct, but modified question wrong with different answers, visual capability is bad
+                        else:
+                            assert False, "Data error"
+                    
+        
+        if name in get_analysis_pair_dict:
+            lh, vi = get_analysis_pair_dict[name]
+            get_analysis_pair_dict[name] = (lh + analysis[0], vi + analysis[1])
+        else:
+            get_analysis_pair_dict[name] = analysis     
+
     eval_all_pair_stat = {}
     eval_all_pair_stat["note"] = "all accuracy per question pair"
-    eval_all_pair_stat["total"] = count
+    eval_all_pair_stat["total"] = len(get_eval_pair_dict.keys())
+    eval_all_pair_stat["total_q"] = counter
     eval_all_pair_stat["correct"] = 0
     eval_all_pair_stat["wrong"] = 0
+    eval_all_pair_stat["LH"] = 0
+    eval_all_pair_stat["VI"] = 0
+    eval_all_pair_stat["Mix"] = 0
 
-    for v in get_eval_pair_dict.values():
+    # for v in get_eval_pair_dict.values():
+    #     if v[0] == v[1]:
+    #         eval_all_pair_stat["correct"] += 1
+    #     else:
+    #         eval_all_pair_stat["wrong"] += 1
+
+    # for v in get_analysis_pair_dict.values():
+    #     if v[0] > 0 and v[1] > 0:
+    #         eval_all_pair_stat["Mix"] += 1
+    #     elif v[0] > 0:
+    #         eval_all_pair_stat["LH"] += 1
+    #     elif v[1] > 0:
+    #         eval_all_pair_stat["VI"] += 1
+
+    for k in get_eval_pair_dict.keys():
+        v = get_eval_pair_dict[k]
+        a = get_analysis_pair_dict[k]
         if v[0] == v[1]:
             eval_all_pair_stat["correct"] += 1
         else:
             eval_all_pair_stat["wrong"] += 1
-            
+        if a[0] > 0 and a[1] > 0:
+            eval_all_pair_stat["Mix"] += 1
+        elif a[0] > 0:
+            eval_all_pair_stat["LH"] += 1
+        elif a[1] > 0:
+            eval_all_pair_stat["VI"] += 1
+
+    assert (eval_all_pair_stat["wrong"] == (eval_all_pair_stat["Mix"] + eval_all_pair_stat["LH"] + eval_all_pair_stat["VI"]))
+
     return eval_all_pair_stat
 
 def get_eval_pair_easy(data):
 
     get_eval_pair_dict = dict()
-    count = 0 
+    counter = 0
+
     for r in data:
         if str(r["figure_id"]) != "0":
             continue
@@ -190,10 +285,12 @@ def get_eval_pair_easy(data):
             get_eval_pair_dict[name] = (c + r["correct"], t+1)
         else:
             get_eval_pair_dict[name] = (r["correct"], 1)        
-        count += 1
+        counter += 1    
+
     eval_all_pair_stat = {}
     eval_all_pair_stat["note"] = "all accuracy per question pair"
-    eval_all_pair_stat["total"] = count
+    eval_all_pair_stat["total"] = len(get_eval_pair_dict.values())
+    eval_all_pair_stat["total_q"] = counter
     eval_all_pair_stat["correct"] = 0
     eval_all_pair_stat["wrong"] = 0
 
@@ -208,7 +305,7 @@ def get_eval_pair_easy(data):
 def get_eval_pair_hard(data):
 
     get_eval_pair_dict = dict()
-    count = 0
+    counter = 0
 
     for r in data:
         if str(r["figure_id"]) == "0":
@@ -219,10 +316,12 @@ def get_eval_pair_hard(data):
             get_eval_pair_dict[name] = (c + r["correct"], t+1)
         else:
             get_eval_pair_dict[name] = (r["correct"], 1)       
-        count += 1 
+        counter += 1    
+
     eval_all_pair_stat = {}
     eval_all_pair_stat["note"] = "all accuracy per question pair"
-    eval_all_pair_stat["total"] = count
+    eval_all_pair_stat["total"] = len(get_eval_pair_dict.values())
+    eval_all_pair_stat["total_q"] = counter
     eval_all_pair_stat["correct"] = 0
     eval_all_pair_stat["wrong"] = 0
 

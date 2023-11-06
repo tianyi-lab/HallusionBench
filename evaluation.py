@@ -76,13 +76,13 @@ if __name__ == "__main__":
 
     q_acc_gpt = round(100 * all_data["correct"]/all_data["total"], 4)
 
-    all_data = get_eval_pair_all(data)
+    all_data = get_eval_pair_all(data, model_correctness_entry)
     easy = get_eval_pair_easy(data)
     hard = get_eval_pair_hard(data)
-    all_vd = get_eval_pair_all(data_vd)
+    all_vd = get_eval_pair_all(data_vd, model_correctness_entry)
     easy_vd = get_eval_pair_easy(data_vd)
     hard_vd = get_eval_pair_hard(data_vd)
-    all_vs = get_eval_pair_all(data_vs)
+    all_vs = get_eval_pair_all(data_vs, model_correctness_entry)
     easy_vs = get_eval_pair_easy(data_vs)
     hard_vs = get_eval_pair_hard(data_vs)
     # question pair level
@@ -115,9 +115,9 @@ if __name__ == "__main__":
 
 
     print("##### Question Stats #####")
-    print("Easy Questions: " + str(easy_vd["total"]) + "(Visual Dependent) + " + str(easy_vs["total"]) + "(Visual Supplement)")
-    print("Hard Questions: " + str(hard_vd["total"]) + "(Visual Dependent) + " + str(hard_vs["total"]) + "(Visual Supplement)")
-    print("Total Questions: " + str(all_data["total"]))
+    print("Easy Questions: " + str(easy_vd["total_q"]) + "(Visual Dependent) + " + str(easy_vs["total_q"]) + "(Visual Supplement)")
+    print("Hard Questions: " + str(hard_vd["total_q"]) + "(Visual Dependent) + " + str(hard_vs["total_q"]) + "(Visual Supplement)")
+    print("Total Questions: " + str(all_data["total_q"]))
 
 
     print("##### Figure Stats #####")
