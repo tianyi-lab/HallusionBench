@@ -99,11 +99,11 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ut
 
 ### Reproduce GPT4V results on leaderboard
 
-1. We saved the ouput of GPT4V with our annotation. Put `HallusionBench.tsv` in the root directory of this repo, or set `input_file_name` in [benchmark.py](./benchmark.py) to the location of the [HallusionBench.tsv](https://drive.google.com/file/d/1p9BJw09l0ZXhv-owIEkXithLLAQrG60U/view?usp=sharing) file.
+1. We saved the ouput of GPT4V with our annotation. Put `HallusionBench.tsv` in the root directory of this repo, or set `input_file_name` in [gpt4v_benchmark.py](./gpt4v_benchmark.py) to the location of the [HallusionBench.tsv](https://drive.google.com/file/d/1p9BJw09l0ZXhv-owIEkXithLLAQrG60U/view?usp=sharing) file.
 
-2. (Optional) If you don't have access to GPT API, you don't need to run it since we have saved evaluation results. They can be downloaded for [Visual Dependent](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing) and [Visual Supplement](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing). Put the json files in the root directory of this repo, or set `save_json_path_vd` and `save_json_path_vd` in [benchmark.py](./benchmark.py) to their respective locations.
+2. (Optional) If you don't have access to GPT API, you don't need to run it since we have saved evaluation results. They can be downloaded for [Visual Dependent](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing) and [Visual Supplement](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing). Put the json files in the root directory of this repo, or set `save_json_path_vd` and `save_json_path_vd` in [gpt4v_benchmark.py](./gpt4v_benchmark.py) to their respective locations.
 
-3. Run `python benchmark.py`.
+3. Run `python gpt4v_benchmark.py`.
 
 ## Examples and Analysis
 <p align="center" >
