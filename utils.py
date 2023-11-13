@@ -168,7 +168,6 @@ def get_eval_all(data, model_correctness_entry): # per question
 
     for r in data:
         name = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["figure_id"]), str(r["question_id"])])
-        print(name)
         assert name not in eval_all_dict 
         
         eval_all_dict[name] = r["correct"]
