@@ -43,6 +43,7 @@ def evaluate_by_chatgpt(data, output_entry, correctness_entry, gpt_model="gpt-4"
                     timeout=5)
                 break
             except:
+                print("Timeout, retrying...")
                 time.sleep(5)  # Wait for 5 seconds before retrying
 
         output_text = response['choices'][0]['message']['content']
@@ -97,6 +98,7 @@ def check_same_by_chatgpt(data, output_entry, gpt_model="gpt-4", load_json=False
 
                     break
                 except:
+                    print("Timeout, retrying...")
                     time.sleep(5)  # Wait for 5 seconds before retrying
 
 
