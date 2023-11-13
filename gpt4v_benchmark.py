@@ -11,19 +11,25 @@ import openai
 ### to evaluate your method, implement and run generate_answer function!
 
 root_dir = "."
-input_file_name = "HallusionBench.tsv"
-save_json_path_vd = "./hallusion_output_vd.json"
-# save_json_path_vd = "./hallusion_output_vd_llava.json"
-save_json_path_vs = "./hallusion_output_vs.json"
-# save_json_path_vs = "./hallusion_output_vs_llava.json"
+llava = False
+# llava = True
 # load_json = False
 load_json = True
+input_file_name = "HallusionBench.tsv"
+
+save_json_path_vd = "./hallusion_output_vd.json"
+save_json_path_vs = "./hallusion_output_vs.json"
 model_output_entry = "gpt4v_output"
-# model_output_entry = "llava_1_5_output"
 model_correctness_entry = "gpt4v_output_gpt_check"
-# model_correctness_entry = "llava_1_5_output_gpt_check"
 model_correctness_entry_human = "gpt4v_output_human_check"
-# model_correctness_entry_human = "llava_1_5_output_human_check"
+
+if llava:
+    save_json_path_vd = "./hallusion_output_vd_llava.json"
+    save_json_path_vs = "./hallusion_output_vs_llava.json"
+    model_output_entry = "llava_1_5_output"
+    model_correctness_entry = "llava_1_5_output_gpt_check"
+    model_correctness_entry_human = "llava_1_5_output_human_check"
+
 
 col_idx = {
     'category':0,
