@@ -18,8 +18,8 @@ col_idx = {
     'question':7, 
     'gt_answer_details':8,
     'gt_answer':9, 
-    'gpt4v_output':10,
-    'gpt4v_output_human_check': 11,
+    # 'gpt4v_output':10,
+    # 'gpt4v_output_human_check': 11,
     # 'llava_1_5_output':12,
     # 'llava_1_5_output_human_check': 13,
 }
@@ -36,11 +36,14 @@ with open(input_file_name) as file:
         if line[0] not in ["VD", "VS"]:
             continue
         data_dict = {}
-        for k, v in col_idx.items():
-            data_dict[k] = line[v]
-            assert int(line[col_idx["gt_answer"]]) == 0 or int(line[col_idx["gt_answer"]]) == 1 or int(line[col_idx["gt_answer"]]) == 2
-            assert int(line[col_idx["gpt4v_output_human_check"]]) == 0 or int(line[col_idx["gpt4v_output_human_check"]]) == 1 or int(line[col_idx["gpt4v_output_human_check"]]) == 2
-
+        try:
+            for k, v in col_idx.items():
+                data_dict[k] = line[v]
+                assert int(line[col_idx["gt_answer"]]) == 0 or int(line[col_idx["gt_answer"]]) == 1 or int(line[col_idx["gt_answer"]]) == 2
+                # assert int(line[col_idx["gpt4v_output_human_check"]]) == 0 or int(line[col_idx["gpt4v_output_human_check"]]) == 1 or int(line[col_idx["gpt4v_output_human_check"]]) == 2
+                # assert int(line[col_idx["llava_1_5_output_human_check"]]) == 0 or int(line[col_idx["llava_1_5_output_human_check"]]) == 1 or int(line[col_idx["llava_1_5_output_human_check"]]) == 2
+        except:
+            from IPython import embed;embed()
 
         data_dict["filename"] = get_image_file_location(root_dir, data_dict)
         if line[0] == "VD":
