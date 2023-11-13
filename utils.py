@@ -6,6 +6,7 @@ from prettytable import PrettyTable
 import os
 import time
 import openai
+import threading
 
 api_key = ''
 
@@ -34,13 +35,14 @@ def evaluate_by_chatgpt(data, output_entry, correctness_entry, gpt_model="gpt-4"
         prompt += sample[output_entry]
         prompt += '\nOutput:'
 
+        # https://github.com/openai/openai-python/issues/322#issuecomment-1767841683
         while True:
             try:
                 response = openai.ChatCompletion.create(
                     model=gpt_model, 
                     messages=[{"role": "user", "content": prompt}], 
                     api_key=api_key, 
-                    timeout=5)
+                    request_timeout=5)
                 break
             except:
                 print("Timeout, retrying...")
@@ -88,13 +90,14 @@ def check_same_by_chatgpt(data, output_entry, gpt_model="gpt-4", load_json=False
             prompt += response2
             prompt += '\nOutput:'
 
+            # https://github.com/openai/openai-python/issues/322#issuecomment-1767841683
             while True:
                 try:
                     response = openai.ChatCompletion.create(
                         model=gpt_model, 
                         messages=[{"role": "user", "content": prompt}], 
                         api_key=api_key, 
-                        timeout=5)
+                        request_timeout=5)
 
                     break
                 except:
