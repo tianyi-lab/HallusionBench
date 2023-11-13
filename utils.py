@@ -68,7 +68,10 @@ def check_same_by_chatgpt(data, output_entry, gpt_model="gpt-4", load_json=False
     for sample in tqdm(data):
         if "same" not in sample.keys():
             key = "_".join([sample["category"], sample["subcategory"], str(sample["set_id"]), str(sample["question_id"])])
-            response2 = orig_response[key]
+            try:
+                response2 = orig_response[key]
+            except:
+                from IPython import embed;embed()
             prompt = 'Imagine you are an intelligent teacher. Thoroughly read the two responses to two different questions. Assess the consistency of the information provided within those two responses. '
             prompt += 'You do not know the specific questions, but you can asssess the consistency among the two responses by checking for logical conflicts if both responses are correct. '
             prompt += 'If response1 does not conflict with response2, please generate “same”. Otherwise, generate "different". \n\n response1:'

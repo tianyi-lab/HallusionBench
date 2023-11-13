@@ -33,7 +33,9 @@ with open(input_file_name) as file:
     tsv_file = csv.reader(file, delimiter="\t")
     flag = 0
     for line in tsv_file:
-        if line[0] not in ["VD", "VS"]:
+        # if line[0] not in ["VD", "VS"]:
+        # if line[0] in ["NOTE", "category"]:
+        if "VD" not in line[0] and "VS" not in line[0]:
             continue
         data_dict = {}
         try:
