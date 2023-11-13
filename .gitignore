@@ -2,3 +2,5 @@
 *.tsv
 *.json
 __pycache__
+apikey.txt
+

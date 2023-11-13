@@ -8,7 +8,10 @@ import time
 import openai
 import threading
 
-api_key = ''
+with open("apikey.txt", "r") as f:
+    api_key = f.read()
+
+# api_key = ''
 
 
 def get_image_file_location(root, row):
