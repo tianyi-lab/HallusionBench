@@ -36,7 +36,7 @@ To keep evaluation simple, we only provide the question in form of yes/no questi
 
 | Updated on      | Questions and Annotations | Figures | Question Count | Figure Count |
 | ----------- | :----: | :----: | :----: | :----: |
-| Oct 27, 2023     | [HallusionBench.json](./HallusionBench.json) | [hallusion_bench.zip](https://drive.google.com/file/d/1sAXmVg3I3A6gjb8JnA6HWjSv1ntrSBki/view?usp=drive_link)         | 254  | 69 |
+| Oct 27, 2023     | [HallusionBench.json](./HallusionBench.json) | [hallusion_bench.zip](https://drive.google.com/file/d/1eeO1i0G9BSZTE1yd5XeFwmrbe1hwyf_0/view?usp=sharing)         | 254  | 69 |
 
 ### Evaluation
 
@@ -46,7 +46,7 @@ git clone https://github.com/tianyi-lab/HallusionBench.git
 cd ./HallusionBench
 ```
 
-2. Download the images [hallusion_bench.zip](https://drive.google.com/file/d/1sAXmVg3I3A6gjb8JnA6HWjSv1ntrSBki/view?usp=drive_link) and unzip the folder in the same directory.
+2. Download the images [hallusion_bench.zip](https://drive.google.com/file/d/1eeO1i0G9BSZTE1yd5XeFwmrbe1hwyf_0/view?usp=sharing) and unzip the folder in the same directory.
    
 3. The questions and image locations are saved in `./HallusionBench.json`. The data sample are as follows:
 ```
@@ -84,10 +84,10 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ut
 
 | Model | Question Pair Acc | Figure Acc | Easy Question Acc | Hard Question Acc | Question Acc | Json |
 | ----- | :----: | :----: | :----: | :----: | :----: | :----: |
-| **GPT4V** <br />Sep 25, 2023 Version <br />(Human Eval) | 27.3504 | 35.1351 |  80.3419 | 27.8351 |  65.4275 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
-| **GPT4V** <br />Sep 25, 2023 Version <br />(GPT Eval) | 25.641 | 31.0811 | 79.4872 |  24.7423 | 62.4535 | [VD](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing), [VS](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing) |
-| **LLaVA-1.5** <br />(Human Eval) | 4.2735 |  9.4595 | 35.8974 | 34.0206 | 38.29 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
-| **LLaVA-1.5** <br />(GPT Eval) | 7.6923 |  8.1081  | 38.4615 | 30.9278  | 41.2639 | [VD](https://drive.google.com/file/d/1U3cS3I0Lpglz8Ej-NW6cp957GHT-T6yy/view?usp=sharing), [VS](https://drive.google.com/file/d/1hIvFqJFO0OVmPVfeq79_IUijt9mugOMV/view?usp=sharing) |
+| **GPT4V** <br />Sep 25, 2023 Version <br />(Human Eval) | 27.3504 | 35.1351 |  80.3419 | 27.8351 |  65.4275 | [VD](), [VS]() |
+| **GPT4V** <br />Sep 25, 2023 Version <br />(GPT Eval) | 25.641 | 31.0811 | 79.4872 |  24.7423 | 62.4535 | [VD](), [VS]() |
+| **LLaVA-1.5** <br />(Human Eval) | 4.2735 |  9.4595 | 35.8974 | 34.0206 | 38.29 | [VD](), [VS]() |
+| **LLaVA-1.5** <br />(GPT Eval) | 7.6923 |  8.1081  | 38.4615 | 30.9278  | 41.2639 | [VD](), [VS]() |
 | **LRV-Instruction** <br />(GPT Eval) | 3.4188 | 8.6957 | 35.8974 | 17.9487 | 28.3465 | [Results](), [VD](), [VS]() |
 | **mPLUG-Owl** <br />(GPT Eval) | 5.1282 | 11.5942 | 31.6239 | 31.6239 | 34.252 | [Results](), [VD](), [VS]() |
 | **mPLUG-Owlv2** <br />(GPT Eval) | 9.4017 | 13.0435 | 49.5726 | 31.6239 | 42.5197 | [Results](), [VD](), [VS]() |
@@ -99,9 +99,9 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ut
 
 ### Reproduce GPT4V results on leaderboard
 
-1. We saved the ouput of GPT4V with our annotation. Put `HallusionBench.tsv` in the root directory of this repo, or set `input_file_name` in [gpt4v_benchmark.py](./gpt4v_benchmark.py) to the location of the [HallusionBench.tsv](https://drive.google.com/file/d/1p9BJw09l0ZXhv-owIEkXithLLAQrG60U/view?usp=sharing) file.
+1. We saved the ouput of GPT4V with our annotation. Put `HallusionBench.tsv` in the root directory of this repo, or set `input_file_name` in [gpt4v_benchmark.py](./gpt4v_benchmark.py) to the location of the [HallusionBench.tsv](https://drive.google.com/file/d/1q8db7-7IlA4WLZ_5Jt-TpLDyAWg8Ybx4/view?usp=sharing) file.
 
-2. (Optional) If you don't have access to GPT API, you don't need to run it since we have saved evaluation results. They can be downloaded for [Visual Dependent](https://drive.google.com/file/d/1uQosejzzz8jsnk_pvowhU5aK-BHbu_Ny/view?usp=sharing) and [Visual Supplement](https://drive.google.com/file/d/1C7O9x26Fc29axdN7W4pQ-0hRmPOp1E6x/view?usp=sharing). Put the json files in the root directory of this repo, or set `save_json_path_vd` and `save_json_path_vd` in [gpt4v_benchmark.py](./gpt4v_benchmark.py) to their respective locations.
+2. (Optional) If you don't have access to GPT API, you don't need to run it since we have saved evaluation results. They can be downloaded for [Visual Dependent]() and [Visual Supplement](). Put the json files in the root directory of this repo, or set `save_json_path_vd` and `save_json_path_vd` in [gpt4v_benchmark.py](./gpt4v_benchmark.py) to their respective locations.
 
 3. Run `python gpt4v_benchmark.py`.
 

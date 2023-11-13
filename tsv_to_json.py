@@ -38,6 +38,9 @@ with open(input_file_name) as file:
         data_dict = {}
         for k, v in col_idx.items():
             data_dict[k] = line[v]
+            assert int(line[col_idx["gt_answer"]]) == 0 or int(line[col_idx["gt_answer"]]) == 1 or int(line[col_idx["gt_answer"]]) == 2
+            assert int(line[col_idx["gpt4v_output_human_check"]]) == 0 or int(line[col_idx["gpt4v_output_human_check"]]) == 1 or int(line[col_idx["gpt4v_output_human_check"]]) == 2
+
 
         data_dict["filename"] = get_image_file_location(root_dir, data_dict)
         if line[0] == "VD":

@@ -359,6 +359,7 @@ def get_eval_pair_hard(data):
 
 def assign_correctness(data_arr, correctness_entry):
     for r in data_arr:
+        assert int(r[correctness_entry]) == 0 or int(r[correctness_entry]) == 1 or int(r[correctness_entry]) == 2
         if r["category"] == "VS" and int(r["figure_id"]) == 0: # if there is no visual supplement and the model does not know, count it as correct
             r["correct"] = 1 if int(r[correctness_entry]) == 1 or int(r[correctness_entry]) == 2 else 0
         else:
