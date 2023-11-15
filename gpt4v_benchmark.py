@@ -99,6 +99,7 @@ if __name__ == "__main__":
     all_data = get_eval_all(data, model_correctness_entry_human)
     all_vd = get_eval_all(data_vd, model_correctness_entry_human)
     all_vs = get_eval_all(data_vs, model_correctness_entry_human)
+    human_check_correctness = [i["correct"] for i in data]
 
     print("##### Human Evaluate #####")
 
@@ -162,6 +163,7 @@ if __name__ == "__main__":
     all_data = get_eval_all(data, model_correctness_entry)
     all_vd = get_eval_all(data_vd, model_correctness_entry)
     all_vs = get_eval_all(data_vs, model_correctness_entry)
+    gpt_check_correctness = [i["correct"] for i in data]
 
     # question level
     table1 = [["per question", "Total"], 
@@ -235,3 +237,14 @@ if __name__ == "__main__":
     print(leaderboard)
 
     print(all_data["total"], all_data["wrong"], all_data["LH"], all_data["VI"], all_data["Mix"])
+
+    print(len(gpt_check_correctness))
+    print(len(human_check_correctness))
+    print(sum(np.array(human_check_correctness) == np.array(gpt_check_correctness)))
+    print(sum(np.array(human_check_correctness) == np.array(gpt_check_correctness)) / len(gpt_check_correctness))
+
+
+    yes = [int(i["gt_answer"]) for i in data]
+    print(sum(yes))
+    print(len(yes))
+    print(sum(yes)/len(yes))
