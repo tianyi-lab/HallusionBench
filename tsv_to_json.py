@@ -58,7 +58,17 @@ print(len(result))
 result1 = []
 
 for re in result:
-    result1.append({"category": re['category'], "subcategory": re['subcategory'], "visual_input": re['visual_input'], "set_id": re['set_id'], "figure_id": re['figure_id'], "sample_note": re['sample_note'], "question_id": re['question_id'], "question": re['question'], "gt_answer": re['gt_answer'], "gt_answer_details": re["gt_answer_details"], "filename": re['filename']})
+    result1.append({"category": re['category'].strip(),
+     "subcategory": re['subcategory'].strip(), 
+     "visual_input": re['visual_input'].strip(), 
+     "set_id": re['set_id'].strip(), 
+     "figure_id": re['figure_id'].strip(), 
+     "sample_note": re['sample_note'].strip(), 
+     "question_id": re['question_id'].strip(), 
+     "question": re['question'].strip(), 
+     "gt_answer": re['gt_answer'].strip(), 
+     "gt_answer_details": re["gt_answer_details"].strip(), 
+     "filename": re['filename'].strip() if re['filename'] else re['filename']})
 
 print(len(result))
 with open('./HallusionBench.json', 'w') as f:
