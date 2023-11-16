@@ -128,7 +128,7 @@ if __name__ == "__main__":
 
     print("##### Leaderboard Stats #####")
 
-    table = [["", "Acc per question pair", "Acc per figure", "Acc per easy question", "Acc per hard question", "Acc per question"], 
+    table = [["", "Acc per question pair (qAcc)", "Acc per figure (fAcc)", "Acc per easy question (easy aAcc)", "Acc per hard question (hard aAcc)", "Acc per question (aAcc)"], 
               ["GPT Eval", pair_acc_gpt, figure_acc_gpt, easy_acc_gpt, hard_acc_gpt, q_acc_gpt]]
     leaderboard = PrettyTable(table[0])
     leaderboard.add_rows(table[1:])
