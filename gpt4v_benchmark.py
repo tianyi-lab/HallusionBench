@@ -136,7 +136,8 @@ if __name__ == "__main__":
     fig_all = get_eval_fig(data)
     fig_vd = get_eval_fig(data_vd)
     fig_vs = get_eval_fig(data_vs)
-
+    fig_all_human = fig_all
+    all_data_human = all_data
     # image level 
     table2 = [["per figure", "Correct", "Inconsistant", "Wrong", "Score"], 
               ["VD", round(100 * fig_vd["correct"]/fig_vd["total"], 4), round(100 * fig_vd["inconsistent"]/fig_vd["total"], 4), round(100 * fig_vd["wrong"]/fig_vd["total"], 4), round(100 * fig_vd["score"], 4)], 
@@ -150,6 +151,8 @@ if __name__ == "__main__":
     figure_acc_human = round(100 * fig_all["correct"]/fig_all["total"], 4)
     easy_acc_human = round(100 * easy["correct"]/easy["total"], 4)
     hard_acc_human = round(100 * hard["correct"]/hard["total"], 4)
+
+    stats_human = yes_ratio_stats(data)
 
     # from IPython import embed;embed()
     ############################################
@@ -237,6 +240,7 @@ if __name__ == "__main__":
     print(leaderboard)
 
     print(all_data["total"], all_data["wrong"], all_data["LH"], all_data["VI"], all_data["Mix"])
+    print(all_data["total_q"], all_data["LH_cg"], all_data["VI_cg"], all_data["Mix_cg"])
 
     print(len(gpt_check_correctness))
     print(len(human_check_correctness))
@@ -248,3 +252,12 @@ if __name__ == "__main__":
     print(sum(yes))
     print(len(yes))
     print(sum(yes)/len(yes))
+
+    stats_gpt = yes_ratio_stats(data)
+
+    table = [["", "Yes/No Bias (Pct Diff)", "Yes/No Bias (FP Ratio)", "Consistency Test (correct)", "Consistency Test (inconsistent)", "Consistency Test (wrong)", "LH", "VI", "Mixed"], 
+              ["Human Eval", stats_human["diff"], stats_human["fp"], round(100 * fig_all_human["correct"]/fig_all_human["total"], 4), round(100 * fig_all_human["inconsistent"]/fig_all_human["total"], 4), round(100 * fig_all_human["wrong"]/fig_all_human["total"], 4), round(100 * all_data_human["LH_cg"]/(all_data_human["LH_cg"] + all_data_human["VI_cg"] + all_data_human["Mix_cg"]), 4), round(100 * all_data_human["VI_cg"]/(all_data_human["LH_cg"] + all_data_human["VI_cg"] + all_data_human["Mix_cg"]), 4), round(100 * all_data_human["Mix_cg"]/(all_data_human["LH_cg"] + all_data_human["VI_cg"] + all_data_human["Mix_cg"]), 4)],
+              ["GPT Eval", stats_gpt["diff"], stats_gpt["fp"], round(100 * fig_all["correct"]/fig_all["total"], 4), round(100 * fig_all["inconsistent"]/fig_all["total"], 4), round(100 * fig_all["wrong"]/fig_all["total"], 4), round(100 * all_data["LH_cg"]/(all_data["LH_cg"] + all_data["VI_cg"] + all_data["Mix_cg"]), 4), round(100 * all_data["VI_cg"]/(all_data["LH_cg"] + all_data["VI_cg"] + all_data["Mix_cg"]), 4), round(100 * all_data["Mix_cg"]/(all_data["LH_cg"] + all_data["VI_cg"] + all_data["Mix_cg"]), 4)]]
+    test = PrettyTable(table[0])
+    test.add_rows(table[1:])
+    print(test)

@@ -206,6 +206,9 @@ def get_eval_pair_all(data, model_correctness_entry): # per question pair
 
     orig_correctness = dict()
     counter = 0
+    lh_counter = 0
+    vi_counter = 0
+    both_counter = 0
 
     for r in data:
         if str(r["figure_id"]) == "0":
@@ -274,7 +277,14 @@ def get_eval_pair_all(data, model_correctness_entry): # per question pair
                         else:
                             assert False, "Data error"
                     
+        if analysis[0] > 0 and analysis[1] > 0:
+            both_counter += 1
+        elif analysis[0] > 0:
+            lh_counter += 1
+        elif analysis[1] > 0:
+            vi_counter += 1
         
+
         if name in get_analysis_pair_dict:
             lh, vi = get_analysis_pair_dict[name]
             get_analysis_pair_dict[name] = (lh + analysis[0], vi + analysis[1])
@@ -290,6 +300,10 @@ def get_eval_pair_all(data, model_correctness_entry): # per question pair
     eval_all_pair_stat["LH"] = 0
     eval_all_pair_stat["VI"] = 0
     eval_all_pair_stat["Mix"] = 0
+
+    eval_all_pair_stat["LH_cg"] = lh_counter
+    eval_all_pair_stat["VI_cg"] = vi_counter
+    eval_all_pair_stat["Mix_cg"] = both_counter
 
     # for v in get_eval_pair_dict.values():
     #     if v[0] == v[1]:
@@ -329,8 +343,8 @@ def get_eval_pair_easy(data):
     counter = 0
 
     for r in data:
-        # if str(r["visual_input"]) == "2":
-        if str(r["figure_id"]) != "0":
+        if str(r["visual_input"]) == "2":
+        # if str(r["figure_id"]) != "0":
             continue
         name = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["question_id"])])
         if name in get_eval_pair_dict:
@@ -361,8 +375,8 @@ def get_eval_pair_hard(data):
     counter = 0
 
     for r in data:
-        # if str(r["visual_input"]) != "2":
-        if str(r["figure_id"]) == "0":
+        if str(r["visual_input"]) != "2":
+        # if str(r["figure_id"]) == "0":
             continue
         name = "_".join([r["category"], r["subcategory"], str(r["set_id"]), str(r["question_id"])])
         if name in get_eval_pair_dict:
@@ -396,4 +410,19 @@ def assign_correctness(data_arr, correctness_entry):
             r["correct"] = 1 if int(r[correctness_entry]) == 1 else 0
     return data_arr
 
+
+def yes_ratio_stats(data):
+
+
+    yes_gt = [int(i["gt_answer"]) for i in data]
+    yes_pred = [int(int(i["correct"]) == int(i["gt_answer"])) for i in data]
+
+    fp_sample = [i for i in data if int(i["correct"]) == 0]
+    fp = [int(i["gt_answer"]) for i in fp_sample]
+
+    stats = {}
+    stats["diff"] = sum(yes_pred)/len(yes_pred) - sum(yes_gt)/len(yes_gt)
+    stats["fp"] = (len(fp) - sum(fp))/len(fp)
+
+    return stats
 

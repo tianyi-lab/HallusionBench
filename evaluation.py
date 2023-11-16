@@ -133,3 +133,12 @@ if __name__ == "__main__":
     leaderboard = PrettyTable(table[0])
     leaderboard.add_rows(table[1:])
     print(leaderboard)
+
+
+    stats = yes_ratio_stats(data)
+
+    table = [["", "Yes/No Bias (Pct Diff)", "Yes/No Bias (FP Ratio)", "Consistency Test (correct)", "Consistency Test (inconsistent)", "Consistency Test (wrong)", "LH", "VI", "Mixed"], 
+              ["GPT Eval", stats["diff"], stats["fp"], round(100 * fig_all["correct"]/fig_all["total"], 4), round(100 * fig_all["inconsistent"]/fig_all["total"], 4), round(100 * fig_all["wrong"]/fig_all["total"], 4), round(100 * all_data["LH_cg"]/(all_data["LH_cg"] + all_data["VI_cg"] + all_data["Mix_cg"]), 4), round(100 * all_data["VI_cg"]/(all_data["LH_cg"] + all_data["VI_cg"] + all_data["Mix_cg"]), 4), round(100 * all_data["Mix_cg"]/(all_data["LH_cg"] + all_data["VI_cg"] + all_data["Mix_cg"]), 4)]]
+    test = PrettyTable(table[0])
+    test.add_rows(table[1:])
+    print(test)
