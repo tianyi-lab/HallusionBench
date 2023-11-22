@@ -84,16 +84,20 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ut
 
 | Model | Question Pair Acc | Figure Acc | Easy Question Acc | Hard Question Acc | Question Acc | Json |
 | ----- | :----: | :----: | :----: | :----: | :----: | :----: |
-| **GPT4V** <br />Sep 25, 2023 Version <br />(Human Eval) | 27.3504 | 35.1351 |  80.3419 | 27.8351 |  65.4275 | [VD](), [VS]() |
-| **GPT4V** <br />Sep 25, 2023 Version <br />(GPT Eval) | 25.641 | 31.0811 | 79.4872 |  24.7423 | 62.4535 | [VD](), [VS]() |
-| **LLaVA-1.5** <br />(Human Eval) | 4.2735 |  9.4595 | 35.8974 | 34.0206 | 38.29 | [VD](), [VS]() |
-| **LLaVA-1.5** <br />(GPT Eval) | 7.6923 |  8.1081  | 38.4615 | 30.9278  | 41.2639 | [VD](), [VS]() |
-| **LRV-Instruction** <br />(GPT Eval) | 3.4188 | 8.6957 | 35.8974 | 17.9487 | 28.3465 | [Results](), [VD](), [VS]() |
-| **mPLUG-Owl** <br />(GPT Eval) | 5.1282 | 11.5942 | 31.6239 | 31.6239 | 34.252 | [Results](), [VD](), [VS]() |
-| **mPLUG-Owlv2** <br />(GPT Eval) | 9.4017 | 13.0435 | 49.5726 | 31.6239 | 42.5197 | [Results](), [VD](), [VS]() |
-| **GIT** <br />(GPT Eval) | 8.547 | 8.6957 | 64.9573 | 28.2051 | 46.063 | [Results](), [VD](), [VS]() |
-| **Qwen-VL** <br />(GPT Eval) | 19.6581 | 24.6377 | 66.6667 | 33.3333 | 51.1811 | [Results](), [VD](), [VS]() |
-| **InstructBLIP** <br />(GPT Eval) | 10.2564 | 5.7971 | 53.8462 | 31.6239 | 43.3071 | [Results](), [VD](), [VS]() |
+| **GPT4V** <br />Sep 25, 2023 Version <br />(Human Eval) | 31.42 | 44.22 |  79.56 | 38.37 |  67.58 | [VD](), [VS]() |
+| **GPT4V** <br />Sep 25, 2023 Version <br />(GPT Eval) | 28.79 | 39.88 | 75.60 |  37.67 | 65.28 | [VD](), [VS]() |
+| **LLaVA-1.5** <br />(Human Eval) | 9.45 |  25.43 | 50.77 | 29.07 | 47.12 | [VD](), [VS]() |
+| **LLaVA-1.5** <br />(GPT Eval) | 10.55 |  24.86  | 49.67 | 29.77  | 46.94 | [VD](), [VS]() |
+| **BLIP2-T5** <br />(GPT Eval) | 15.16 |  20.52  | 45.49 | 43.49  | 48.09 | [VD](), [VS]() |
+| **InstructBLIP** <br />(GPT Eval) | 9.45 |  10.11  | 35.60 | 45.12 | 45.26 | [VD](), [VS]() |
+| **Qwen-VL** <br />(GPT Eval) | 5.93 |  6.65  | 31.43 | 24.88 | 39.15 | [VD](), [VS]() |
+| **Open-Flamingo** <br />(GPT Eval) | 6.37 |  11.27 | 39.56 | 27.21 | 38.44 | [VD](), [VS]() |
+| **MiniGPT5** <br />(GPT Eval) |10.55 | 9.83 | 36.04| 28.37 | 40.30 | [VD](), [VS]() |
+| **MiniGPT4** <br />(GPT Eval) |8.79 | 10.12 | 31.87| 27.67 | 35.78 | [VD](), [VS]() |
+| **mPLUG_Owl-v2** <br />(GPT Eval) |13.85 | 19.94 | 44.84| 39.07 | 47.30 | [VD](), [VS]() |
+| **mPLUG_Owl-v1** <br />(GPT Eval) |9.45 | 10.40 | 39.34| 29.77 | 43.93 | [VD](), [VS]() |
+| **GiT** <br />(GPT Eval) |5.27 | 6.36 | 26.81| 31.86 | 34.37 | [VD](), [VS]() |
+
 
 
 ### Reproduce GPT4V results on leaderboard
