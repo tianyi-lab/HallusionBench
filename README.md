@@ -84,8 +84,7 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ut
 
 | Model | Question Pair Acc | Figure Acc | Easy Question Acc | Hard Question Acc | Question Acc | Json |
 | ----- | :----: | :----: | :----: | :----: | :----: | :----: |
-| updating data (will update leaderboard by Nov 15) |  |  |  |  |  |  |
-<!-- | **GPT4V** <br />Sep 25, 2023 Version <br />(Human Eval) | 27.3504 | 35.1351 |  80.3419 | 27.8351 |  65.4275 | [VD](), [VS]() |
+| **GPT4V** <br />Sep 25, 2023 Version <br />(Human Eval) | 27.3504 | 35.1351 |  80.3419 | 27.8351 |  65.4275 | [VD](), [VS]() |
 | **GPT4V** <br />Sep 25, 2023 Version <br />(GPT Eval) | 25.641 | 31.0811 | 79.4872 |  24.7423 | 62.4535 | [VD](), [VS]() |
 | **LLaVA-1.5** <br />(Human Eval) | 4.2735 |  9.4595 | 35.8974 | 34.0206 | 38.29 | [VD](), [VS]() |
 | **LLaVA-1.5** <br />(GPT Eval) | 7.6923 |  8.1081  | 38.4615 | 30.9278  | 41.2639 | [VD](), [VS]() |
@@ -94,8 +93,7 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ut
 | **mPLUG-Owlv2** <br />(GPT Eval) | 9.4017 | 13.0435 | 49.5726 | 31.6239 | 42.5197 | [Results](), [VD](), [VS]() |
 | **GIT** <br />(GPT Eval) | 8.547 | 8.6957 | 64.9573 | 28.2051 | 46.063 | [Results](), [VD](), [VS]() |
 | **Qwen-VL** <br />(GPT Eval) | 19.6581 | 24.6377 | 66.6667 | 33.3333 | 51.1811 | [Results](), [VD](), [VS]() |
-| **InstructBLIP** <br />(GPT Eval) | 10.2564 | 5.7971 | 53.8462 | 31.6239 | 43.3071 | [Results](), [VD](), [VS]() | -->
-| etc. | TBD | TBD | TBD | TBD | TBD | TBD |
+| **InstructBLIP** <br />(GPT Eval) | 10.2564 | 5.7971 | 53.8462 | 31.6239 | 43.3071 | [Results](), [VD](), [VS]() |
 
 
 ### Reproduce GPT4V results on leaderboard
