@@ -20,11 +20,13 @@ If you find our paper useful, please cite our paper:
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
-@article{liu2023aligning,
-  title={Aligning Large Multi-Modal Model with Robust Instruction Tuning},
-  author={Liu, Fuxiao and Lin, Kevin and Li, Linjie and Wang, Jianfeng and Yacoob, Yaser and Wang, Lijuan},
-  journal={arXiv preprint arXiv:2306.14565},
-  year={2023}
+@misc{liu2023mitigating,
+      title={Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning}, 
+      author={Fuxiao Liu and Kevin Lin and Linjie Li and Jianfeng Wang and Yaser Yacoob and Lijuan Wang},
+      year={2023},
+      eprint={2306.14565},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
