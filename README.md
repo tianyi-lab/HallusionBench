@@ -91,19 +91,22 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ut
 
 | Model | Question Pair Acc | Figure Acc | Easy Question Acc | Hard Question Acc | Question Acc | Json |
 | ----- | :----: | :----: | :----: | :----: | :----: | :----: |
-| **GPT4V** <br />Sep 25, 2023 Version <br />(Human Eval) | 31.42 | 44.22 |  79.56 | 38.37 |  67.58 | [VD](), [VS]() |
-| **GPT4V** <br />Sep 25, 2023 Version <br />(GPT Eval) | 28.79 | 39.88 | 75.60 |  37.67 | 65.28 | [VD](), [VS]() |
-| **LLaVA-1.5** <br />(Human Eval) | 9.45 |  25.43 | 50.77 | 29.07 | 47.12 | [VD](), [VS]() |
-| **LLaVA-1.5** <br />(GPT Eval) | 10.55 |  24.86  | 49.67 | 29.77  | 46.94 | [VD](), [VS]() |
-| **BLIP2-T5** <br />(GPT Eval) | 15.16 |  20.52  | 45.49 | 43.49  | 48.09 | [VD](), [VS]() |
-| **InstructBLIP** <br />(GPT Eval) | 9.45 |  10.11  | 35.60 | 45.12 | 45.26 | [VD](), [VS]() |
-| **Qwen-VL** <br />(GPT Eval) | 5.93 |  6.65  | 31.43 | 24.88 | 39.15 | [VD](), [VS]() |
-| **Open-Flamingo** <br />(GPT Eval) | 6.37 |  11.27 | 39.56 | 27.21 | 38.44 | [VD](), [VS]() |
-| **MiniGPT5** <br />(GPT Eval) |10.55 | 9.83 | 36.04| 28.37 | 40.30 | [VD](), [VS]() |
-| **MiniGPT4** <br />(GPT Eval) |8.79 | 10.12 | 31.87| 27.67 | 35.78 | [VD](), [VS]() |
-| **mPLUG_Owl-v2** <br />(GPT Eval) |13.85 | 19.94 | 44.84| 39.07 | 47.30 | [VD](), [VS]() |
-| **mPLUG_Owl-v1** <br />(GPT Eval) |9.45 | 10.40 | 39.34| 29.77 | 43.93 | [VD](), [VS]() |
-| **GiT** <br />(GPT Eval) |5.27 | 6.36 | 26.81| 31.86 | 34.37 | [VD](), [VS]() |
+| **GPT4V** <br />Sep 25, 2023 Version <br />(Human Eval) | 31.42 | 44.22 |  79.56 | 38.37 |  67.58 | [VD](https://drive.google.com/file/d/1E-YGJjGV9nhMear7MsHan99oSzs7aeuO/view?usp=sharing), [VS](https://drive.google.com/file/d/1rndpHxRZFocY7PFDr5R1pF_EkEyC-sZT/view?usp=sharing) |
+| **GPT4V** <br />Sep 25, 2023 Version <br />(GPT Eval) | 28.79 | 39.88 | 75.60 |  37.67 | 65.28 | [VD](https://drive.google.com/file/d/1E-YGJjGV9nhMear7MsHan99oSzs7aeuO/view?usp=sharing), [VS](https://drive.google.com/file/d/1rndpHxRZFocY7PFDr5R1pF_EkEyC-sZT/view?usp=sharing) |
+| **LLaVA-1.5** <br />(Human Eval) | 9.45 |  25.43 | 50.77 | 29.07 | 47.12 | [VD](https://drive.google.com/file/d/1_5P7lVileQMnRwg5GMWRQvABTD3HFj5_/view?usp=sharing), [VS](https://drive.google.com/file/d/1eB_v4Oe_FttGGcsrorOaOiNblHhBCVDV/view?usp=sharing) |
+| **LLaVA-1.5** <br />(GPT Eval) | 10.55 |  24.86  | 49.67 | 29.77  | 46.94 | [VD](https://drive.google.com/file/d/1_5P7lVileQMnRwg5GMWRQvABTD3HFj5_/view?usp=sharing), [VS](https://drive.google.com/file/d/1eB_v4Oe_FttGGcsrorOaOiNblHhBCVDV/view?usp=sharing) |
+| **BLIP2-T5** <br />(GPT Eval) | 15.16 |  20.52  | 45.49 | 43.49  | 48.09 | [VD](https://drive.google.com/file/d/1lpo2Lg0a2ruwuLoahtvhoZdnnprXKxUz/view?usp=sharing), [VS](https://drive.google.com/file/d/1aTt6TSXSbA-k6Mvv5kTvaBcgFvlKm1Ox/view?usp=sharing) |
+| **Qwen-VL** <br />(GPT Eval) | 5.93 |  6.65  | 31.43 | 24.88 | 39.15 | [VD](https://drive.google.com/file/d/1-gTi91aU5sI3vc4Yer6qT06dnXMDPHdP/view?usp=sharing), [VS](https://drive.google.com/file/d/1kSXoN_nNcRyaTL-7JhEqrrr5XTVLjOCb/view?usp=sharing) |
+| **Open-Flamingo** <br />(GPT Eval) | 6.37 |  11.27 | 39.56 | 27.21 | 38.44 | [VD](https://drive.google.com/file/d/1OsvE47tguXyaFdL2UEQdg14bSF7jV-by/view?usp=sharing), [VS](https://drive.google.com/file/d/1Klwy9hga_9V3S83Q5U-ofeLlWnYPwpMq/view?usp=sharing) |
+| **MiniGPT5** <br />(GPT Eval) |10.55 | 9.83 | 36.04| 28.37 | 40.30 | [VD](https://drive.google.com/file/d/1g6rCyUekv5nsZHDbzvZBg3VhwtUZPQk0/view?usp=sharing), [VS](https://drive.google.com/file/d/1fB4v00-FJ1ENR-paoAzajuGtRyy0ZivJ/view?usp=sharing) |
+| **MiniGPT4** <br />(GPT Eval) |8.79 | 10.12 | 31.87| 27.67 | 35.78 | [VD](https://drive.google.com/file/d/148AwFVXLCaw2HCbvaZ85hVjC_otjOWlB/view?usp=sharing), [VS](https://drive.google.com/file/d/1KQXiGSEQjm0JSSIKtQP21279jOhatJuq/view?usp=sharing) |
+| **InstructBLIP** <br />(GPT Eval) | 9.45 |  10.11  | 35.60 | 45.12 | 45.26 | [VD](https://drive.google.com/file/d/13jPzKKKvffxwZoegA0aBAOvmt0AXf2hU/view?usp=sharing), [VS](https://drive.google.com/file/d/1HUe0fay54owtOIJPuolF08mbT0uF0NYG/view?usp=sharing) |
+| **BLIP2** <br />(GPT Eval) |5.05 | 12.43 | 33.85| 40.70 | 40.48 | [VD](https://drive.google.com/file/d/175L9UwR7Cjet3MSOfxgn3pJeVSr3a2zc/view?usp=sharing), [VS](https://drive.google.com/file/d/104E27ReTdDcaKbDKS6LZJnH0PdMjfwcA/view?usp=sharing) |
+| **mPLUG_Owl-v2** <br />(GPT Eval) |13.85 | 19.94 | 44.84| 39.07 | 47.30 | [VD](https://drive.google.com/file/d/1pTq8lVnCnUbMjYf7SOXBF_iYXADyuniH/view?usp=sharing), [VS](https://drive.google.com/file/d/1ouaSAlcfm1kYOxa2MHrLHPLrGocYqtRJ/view?usp=sharing) |
+| **mPLUG_Owl-v1** <br />(GPT Eval) |9.45 | 10.40 | 39.34| 29.77 | 43.93 | [VD](https://drive.google.com/file/d/1zl-Omccz2gN295OJb-WJmWlKfx0YLPNo/view?usp=sharing), [VS](https://drive.google.com/file/d/1nNG0KLifWdzwE0qe7UnIlRDaosgPkBQF/view?usp=sharing) |
+| **LRV_Instruction** <br />(GPT Eval) |8.79 | 13.01 | 39.78| 27.44 | 42.78 | [VD](https://drive.google.com/file/d/1q0AUUrua-jVTSbL4oL2knCleopEmrGrQ/view?usp=sharing), [VS](https://drive.google.com/file/d/1cb7QILBox-78I9txzR70uWHmB38I13FA/view?usp=sharing) |
+| **ViLT** <br />(GPT Eval) | 8.3516 | 11.2717 | 37.8022 | 45.3488  | 44.4641 | [VD](https://drive.google.com/file/d/1xpCi1utJ3tD97y0CD496bEaMDA3p2qxY/view?usp=sharing), [VS](https://drive.google.com/file/d/1ZZK2lvpGdoY_ntWpF23m-m4LIo-Jgxav/view?usp=sharing) |
+| **GiT** <br />(GPT Eval) |5.27 | 6.36 | 26.81| 31.86 | 34.37 | [VD](https://drive.google.com/file/d/14zkly-UCIjaMdRaYKyHQHgtJVM8enp9i/view?usp=sharing), [VS](https://drive.google.com/file/d/1aH6KCsiXKMMsh9pElnQrR1scIfOA3zJp/view?usp=sharing) |
 
 
 

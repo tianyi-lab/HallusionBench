@@ -96,6 +96,8 @@ if __name__ == "__main__":
     data_vs = assign_correctness(data_vs, correctness_entry=model_correctness_entry_human)
     data = data_vd + data_vs
 
+    # data = [i for i in data if i["subcategory"] == "illusion"]
+
     all_data = get_eval_all(data, model_correctness_entry_human)
     all_vd = get_eval_all(data_vd, model_correctness_entry_human)
     all_vs = get_eval_all(data_vs, model_correctness_entry_human)
@@ -162,6 +164,8 @@ if __name__ == "__main__":
     data_vd = assign_correctness(data_vd, correctness_entry=model_correctness_entry)
     data_vs = assign_correctness(data_vs, correctness_entry=model_correctness_entry)
     data = data_vd + data_vs
+
+    # data = [i for i in data if i["subcategory"] == "illusion"]
 
     all_data = get_eval_all(data, model_correctness_entry)
     all_vd = get_eval_all(data_vd, model_correctness_entry)
