@@ -28,11 +28,13 @@ If you find our paper useful, please cite our paper:
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
-@article{liu2023mmc,
-  title={MMC: Advancing Multimodal Chart Understanding with Large-scale Instruction Tuning},
-  author={Liu, Fuxiao and Wang, Xiaoyang and Yao, Wenlin and Chen, Jianshu and Song, Kaiqiang and Cho, Sangwoo and Yacoob, Yaser and Yu, Dong},
-  journal={arXiv preprint arXiv:2311.10774},
-  year={2023}
+@misc{liu2023mmc,
+      title={MMC: Advancing Multimodal Chart Understanding with Large-scale Instruction Tuning}, 
+      author={Fuxiao Liu and Xiaoyang Wang and Wenlin Yao and Jianshu Chen and Kaiqiang Song and Sangwoo Cho and Yaser Yacoob and Dong Yu},
+      year={2023},
+      eprint={2311.10774},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }
 ```
 
