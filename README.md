@@ -39,7 +39,8 @@ If you find our paper useful, please cite our paper:
 ```
 
 ## Updates
-- [1/15] 🔥 Our work ["Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"](https://github.com/FuxiaoLiu/LRV-Instruction) is accepted by [ICLR 2024](https://iclr.cc).
+- [02/26] 🔥 Our ["HallusionBench"] is accepted by [CVPR 2024](https://cvpr.thecvf.com)
+- [01/15] 🔥 Our work ["Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"](https://github.com/FuxiaoLiu/LRV-Instruction) is accepted by [ICLR 2024](https://iclr.cc).
 - [11/28] 🔥 The full paper is uploaded and can be accessed [here](https://arxiv.org/abs/2310.14566). The dataset is expanded and leaderboard is updated.
 - [11/13] 🔥 Evaluation result on LLaVA-1.5 is updated. More model results to come!
 - [10/27] 🔥 The [leaderboard](https://paperswithcode.com/sota/visual-question-answering-vqa-on-3) and evaluation code is released! **Welcome to update your model on our leaderboard!**
