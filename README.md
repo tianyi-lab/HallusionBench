@@ -4,6 +4,16 @@ You See What You Think? Or You Think What You See? An Image-Context Reasoning Be
 
 [Tianrui Guan*](https://tianruiguan.phd), [Fuxiao Liu*](https://fuxiaoliu.github.io/), Xiyang Wu, Ruiqi Xian, Zongxia Li, Xiaoyu Liu, Xijun Wang, Lichang Chen, Furong Huang, Yaser Yacoob, Dinesh Manocha, Tianyi Zhou
 
+
+## Updates
+- [02/26] 🔥 Our [HallusionBench](https://arxiv.org/abs/2310.14566) is accepted by **[CVPR 2024](https://cvpr.thecvf.com)**.
+- [01/15] 🔥 Our work ["Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"](https://github.com/FuxiaoLiu/LRV-Instruction) is accepted by [ICLR 2024](https://iclr.cc).
+- [11/28] 🔥 The full paper is uploaded and can be accessed [here](https://arxiv.org/abs/2310.14566). The dataset is expanded and leaderboard is updated.
+- [11/13] 🔥 Evaluation result on LLaVA-1.5 is updated. More model results to come!
+- [10/27] 🔥 The [leaderboard](https://paperswithcode.com/sota/visual-question-answering-vqa-on-3) and evaluation code is released! **Welcome to update your model on our leaderboard!**
+- [10/24] 🔥 The early report with case analysis and insights is available [here](https://arxiv.org/abs/2310.14566).
+
+
 🔥🔥🔥
 ## We welcome everyone to contribute the failure cases of Large Multimodal Models (GPT-4V) to our community!
 🔥🔥🔥
@@ -37,14 +47,6 @@ If you find our paper useful, please cite our paper:
       primaryClass={cs.CL}
 }
 ```
-
-## Updates
-- [02/26] 🔥 Our [HallusionBench](https://arxiv.org/abs/2310.14566) is accepted by **[CVPR 2024](https://cvpr.thecvf.com)**.
-- [01/15] 🔥 Our work ["Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"](https://github.com/FuxiaoLiu/LRV-Instruction) is accepted by [ICLR 2024](https://iclr.cc).
-- [11/28] 🔥 The full paper is uploaded and can be accessed [here](https://arxiv.org/abs/2310.14566). The dataset is expanded and leaderboard is updated.
-- [11/13] 🔥 Evaluation result on LLaVA-1.5 is updated. More model results to come!
-- [10/27] 🔥 The [leaderboard](https://paperswithcode.com/sota/visual-question-answering-vqa-on-3) and evaluation code is released! **Welcome to update your model on our leaderboard!**
-- [10/24] 🔥 The early report with case analysis and insights is available [here](https://arxiv.org/abs/2310.14566).
 
 ## Dataset Download
 
