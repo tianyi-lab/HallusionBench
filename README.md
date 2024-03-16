@@ -1,8 +1,19 @@
-# HallusionBench: An Advanced Diagnostic Suite for Entangled Language Hallucination & Visual Illusion in Large Vision-Language Models
+# HallusionBench: An Advanced Diagnostic Suite for Entangled Language Hallucination & Visual Illusion in Large Vision-Language Models [[CVPR 2024]](https://cvpr.thecvf.com)
 
 You See What You Think? Or You Think What You See? An Image-Context Reasoning Benchmark Challenging for GPT-4V(ision), LLaVA-1.5, and Other Multi-modality Models
 
 [Tianrui Guan*](https://tianruiguan.phd), [Fuxiao Liu*](https://fuxiaoliu.github.io/), Xiyang Wu, Ruiqi Xian, Zongxia Li, Xiaoyu Liu, Xijun Wang, Lichang Chen, Furong Huang, Yaser Yacoob, Dinesh Manocha, Tianyi Zhou
+
+
+## Updates
+- [03/13]🔥 Our paper ["MMC: Advancing Multimodal Chart Understanding with LLM Instruction Tuning"](https://arxiv.org/pdf/2311.10774.pdf) is accepted to **[NAACL 2024](https://2024.naacl.org)**.
+- [02/26] 🔥 Our [HallusionBench](https://arxiv.org/abs/2310.14566) is accepted by **[CVPR 2024](https://cvpr.thecvf.com)**.
+- [01/15] 🔥 Our work ["Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"](https://github.com/FuxiaoLiu/LRV-Instruction) is accepted by **[ICLR 2024](https://iclr.cc)**.
+- [11/28] 🔥 The full paper is uploaded and can be accessed [here](https://arxiv.org/abs/2310.14566). The dataset is expanded and leaderboard is updated.
+- [11/13] 🔥 Evaluation result on LLaVA-1.5 is updated. More model results to come!
+- [10/27] 🔥 The [leaderboard](https://paperswithcode.com/sota/visual-question-answering-vqa-on-3) and evaluation code is released! **Welcome to update your model on our leaderboard!**
+- [10/24] 🔥 The early report with case analysis and insights is available [here](https://arxiv.org/abs/2310.14566).
+
 
 🔥🔥🔥
 ## We welcome everyone to contribute the failure cases of Large Multimodal Models (GPT-4V) to our community!
@@ -28,14 +39,15 @@ If you find our paper useful, please cite our paper:
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+@misc{liu2023mmc,
+      title={MMC: Advancing Multimodal Chart Understanding with Large-scale Instruction Tuning}, 
+      author={Fuxiao Liu and Xiaoyang Wang and Wenlin Yao and Jianshu Chen and Kaiqiang Song and Sangwoo Cho and Yaser Yacoob and Dong Yu},
+      year={2023},
+      eprint={2311.10774},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 ```
-
-## Updates
-- [11/28] 🔥 The full paper is uploaded and can be accessed [here](https://arxiv.org/abs/2310.14566). The dataset is expanded and leaderboard is updated.
-- [11/13] 🔥 Evaluation result on LLaVA-1.5 is updated. More model results to come!
-- [10/27] 🔥 The [leaderboard](https://paperswithcode.com/sota/visual-question-answering-vqa-on-3) and evaluation code is released! **Welcome to update your model on our leaderboard!**
-- [10/24] 🔥 The early report with case analysis and insights is available [here](https://arxiv.org/abs/2310.14566).
-- [10/23] 🔥 Please check our previous work on mitigating hallucinations of LMMs ["Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"](https://github.com/FuxiaoLiu/LRV-Instruction).
 
 ## Dataset Download
 
@@ -95,6 +107,8 @@ You can use your own API key for GPT4 evaluation by editing the code [here](./ut
 | **GPT4V** <br />Sep 25, 2023 Version <br />(GPT Eval) | 28.79 | 39.88 | 75.60 |  37.67 | 65.28 | [VD](https://drive.google.com/file/d/1E-YGJjGV9nhMear7MsHan99oSzs7aeuO/view?usp=sharing), [VS](https://drive.google.com/file/d/1rndpHxRZFocY7PFDr5R1pF_EkEyC-sZT/view?usp=sharing) |
 | **LLaVA-1.5** <br />(Human Eval) | 9.45 |  25.43 | 50.77 | 29.07 | 47.12 | [VD](https://drive.google.com/file/d/1_5P7lVileQMnRwg5GMWRQvABTD3HFj5_/view?usp=sharing), [VS](https://drive.google.com/file/d/1eB_v4Oe_FttGGcsrorOaOiNblHhBCVDV/view?usp=sharing) |
 | **LLaVA-1.5** <br />(GPT Eval) | 10.55 |  24.86  | 49.67 | 29.77  | 46.94 | [VD](https://drive.google.com/file/d/1_5P7lVileQMnRwg5GMWRQvABTD3HFj5_/view?usp=sharing), [VS](https://drive.google.com/file/d/1eB_v4Oe_FttGGcsrorOaOiNblHhBCVDV/view?usp=sharing) |
+| **Gemini Pro Vision** <br /> Dec, 2023 Version <br />(GPT Eval) | 7.69 | 8.67 | 35.60 | 30.23 | 36.85 | [VD](https://drive.google.com/file/d/1Ldj5Cr8zHTc_HvraYwdSAGsm1COq6Ims/view?usp=sharing), [VS](https://drive.google.com/file/d/130Dla90HsH4QV_D97nkn3iwa0jybnKbw/view?usp=sharing) |
+| **GUA_VL** <br />(GPT Eval) | 16.70 | 23.12 | 53.63 | 39.77 | 51.82 | [VD](https://drive.google.com/file/d/1E0Tb21d4eKGzvBTT4Y7pTVJKPbnvQ3m6/view?usp=sharing), [VS](https://drive.google.com/file/d/174u8XI38NqIe-b_zJf_XAz0Gj2K4gP6T/view?usp=sharing) |
 | **BLIP2-T5** <br />(GPT Eval) | 15.16 |  20.52  | 45.49 | 43.49  | 48.09 | [VD](https://drive.google.com/file/d/1lpo2Lg0a2ruwuLoahtvhoZdnnprXKxUz/view?usp=sharing), [VS](https://drive.google.com/file/d/1aTt6TSXSbA-k6Mvv5kTvaBcgFvlKm1Ox/view?usp=sharing) |
 | **Qwen-VL** <br />(GPT Eval) | 5.93 |  6.65  | 31.43 | 24.88 | 39.15 | [VD](https://drive.google.com/file/d/1-gTi91aU5sI3vc4Yer6qT06dnXMDPHdP/view?usp=sharing), [VS](https://drive.google.com/file/d/1kSXoN_nNcRyaTL-7JhEqrrr5XTVLjOCb/view?usp=sharing) |
 | **Open-Flamingo** <br />(GPT Eval) | 6.37 |  11.27 | 39.56 | 27.21 | 38.44 | [VD](https://drive.google.com/file/d/1OsvE47tguXyaFdL2UEQdg14bSF7jV-by/view?usp=sharing), [VS](https://drive.google.com/file/d/1Klwy9hga_9V3S83Q5U-ofeLlWnYPwpMq/view?usp=sharing) |
