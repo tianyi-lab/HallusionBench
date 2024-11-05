@@ -23,13 +23,22 @@ Large language models (LLMs), after being aligned with vision models and integra
 
 If you find our paper useful, please cite our paper:
 ```bibtex
-@misc{guan2023hallusionbench,
-      title={HallusionBench: An Advanced Diagnostic Suite for Entangled Language Hallucination & Visual Illusion in Large Vision-Language Models}, 
-      author={Tianrui Guan and Fuxiao Liu and Xiyang Wu and Ruiqi Xian and Zongxia Li and Xiaoyu Liu and Xijun Wang and Lichang Chen and Furong Huang and Yaser Yacoob and Dinesh Manocha and Tianyi Zhou},
-      year={2023},
-      eprint={2310.14566},
+@misc{wu2024autohallusion,
+      title={AutoHallusion: Automatic Generation of Hallucination Benchmarks for Vision-Language Models}, 
+      author={Xiyang Wu and Tianrui Guan and Dianqi Li and Shuaiyi Huang and Xiaoyu Liu and Xijun Wang and Ruiqi Xian and Abhinav Shrivastava and Furong Huang and Jordan Lee Boyd-Graber and Tianyi Zhou and Dinesh Manocha},
+      year={2024},
+      eprint={2406.10900},
       archivePrefix={arXiv},
-      primaryClass={cs.CV}
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2406.10900}, 
+}
+@InProceedings{Guan_2024_CVPR,
+    author    = {Guan, Tianrui and Liu, Fuxiao and Wu, Xiyang and Xian, Ruiqi and Li, Zongxia and Liu, Xiaoyu and Wang, Xijun and Chen, Lichang and Huang, Furong and Yacoob, Yaser and Manocha, Dinesh and Zhou, Tianyi},
+    title     = {HallusionBench: An Advanced Diagnostic Suite for Entangled Language Hallucination and Visual Illusion in Large Vision-Language Models},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {14375-14385}
 }
 @misc{liu2023mitigating,
       title={Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning}, 
