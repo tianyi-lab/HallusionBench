@@ -6,6 +6,7 @@ You See What You Think? Or You Think What You See? An Image-Context Reasoning Be
 
 
 ## Updates
+- [09/20]🔥 Our paper ["AutoHallusion: Automatic Generation of Hallucination Benchmarks for Vision-Language Models"](https://arxiv.org/pdf/2406.10900.pdf) is accepted to **[EMNLP 2024](https://2024.emnlp.org/)**. Our code and data are avaialble on github [here](https://github.com/wuxiyang1996/AutoHallusion).
 - [03/13]🔥 Our paper ["MMC: Advancing Multimodal Chart Understanding with LLM Instruction Tuning"](https://arxiv.org/pdf/2311.10774.pdf) is accepted to **[NAACL 2024](https://2024.naacl.org)**.
 - [02/26] 🔥 Our [HallusionBench](https://arxiv.org/abs/2310.14566) is accepted by **[CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/html/Guan_HallusionBench_An_Advanced_Diagnostic_Suite_for_Entangled_Language_Hallucination_and_CVPR_2024_paper.html)**.
 - [01/15] 🔥 Our work ["Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"](https://github.com/FuxiaoLiu/LRV-Instruction) is accepted by **[ICLR 2024](https://iclr.cc)**.
