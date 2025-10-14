@@ -5,83 +5,101 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>HallusionBench Leaderboard</title>
   <style>
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-    h1 { margin-bottom: 8px; }
-    .muted { color: #6b7280; font-size: 14px; margin-bottom: 16px; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td {
-      padding: 10px;
-      border-bottom: 1px solid #e5e7eb;
-      text-align: left;
-    }
-    th { cursor: pointer; user-select: none; }
-    tr:hover { background: #f9fafb; }
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
+    :root{--muted:#6b7280;--line:#e5e7eb;--gold:#f59e0b;--silver:#9ca3af;--bronze:#c2410c;}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:960px;margin:40px auto;padding:0 16px}
+    h1{margin:0 0 6px}
+    .muted{color:var(--muted);font-size:14px;margin-bottom:14px}
+    input{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:8px;margin:6px 0 14px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left}
+    th{cursor:pointer;user-select:none;white-space:nowrap}
+    tr:hover{background:#fafafa}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;margin-left:6px}
+    .gold{background:var(--gold);color:#111827}
+    .silver{background:var(--silver);color:#111827}
+    .bronze{background:var(--bronze);color:#fff}
   </style>
 </head>
 <body>
   <h1>HallusionBench Leaderboard 🏆</h1>
   <div class="muted">Click column headers to sort • Type to filter</div>
-  <input id="search" placeholder="Search model or organization...">
+  <input id="search" placeholder="Search model...">
 
-  <table id="leaderboard">
+  <table id="tbl">
     <thead>
       <tr>
         <th data-key="rank" data-num>Rank ⬍</th>
         <th data-key="model">Model ⬍</th>
-        <th data-key="organization">Organization ⬍</th>
-        <th data-key="score" data-num>Score ⬍</th>
-        <th data-key="date">Date ⬍</th>
+        <th data-key="date">Eval Date ⬍</th>
+        <th data-key="overall" data-num>Overall ⬍</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
 
   <script>
-    const data = [
-      { rank: 1, model: "Eagle-1", organization: "NVIDIA", score: 92.4, date: "2025-10-14" },
-      { rank: 2, model: "InternVL 2.5", organization: "Shanghai AI Lab", score: 90.1, date: "2025-10-10" },
-      { rank: 3, model: "Qwen-VL-Plus", organization: "Alibaba", score: 88.7, date: "2025-09-30" },
-    ];
+    let rows = [];
+    const $tbody = document.querySelector('#tbl tbody');
 
-    const tbody = document.querySelector("#leaderboard tbody");
-    const render = (arr) => {
-      tbody.innerHTML = arr.map(
-        r => `<tr><td>${r.rank}</td><td>${r.model}</td><td>${r.organization}</td><td>${r.score}</td><td>${r.date}</td></tr>`
-      ).join("");
-    };
-    render(data);
+    // 渲染
+    function render(data){
+      $tbody.innerHTML = data.map((r,i)=>{
+        const badge =
+          r.rank===1 ? '<span class="badge gold">#1</span>' :
+          r.rank===2 ? '<span class="badge silver">#2</span>' :
+          r.rank===3 ? '<span class="badge bronze">#3</span>' : '';
+        return `<tr>
+          <td>${r.rank}</td>
+          <td>${r.model} ${badge}</td>
+          <td>${r.date}</td>
+          <td>${(+r.overall).toFixed(1)}</td>
+        </tr>`;
+      }).join('');
+    }
 
-    let sortKey = null, sortAsc = true;
-    document.querySelectorAll("th").forEach(th =>
-      th.addEventListener("click", () => {
+    // 排序
+    let sortKey=null, sortAsc=true;
+    document.querySelectorAll('th').forEach(th=>{
+      th.addEventListener('click', ()=>{
         const key = th.dataset.key;
-        const num = "num" in th.dataset;
-        sortAsc = sortKey === key ? !sortAsc : true;
+        const isNum = 'num' in th.dataset;
+        sortAsc = sortKey===key ? !sortAsc : true;
         sortKey = key;
-        const sorted = [...data].sort((a, b) => {
-          const A = a[key], B = b[key];
-          return num ? (sortAsc ? A - B : B - A)
-                     : (sortAsc ? String(A).localeCompare(String(B)) : String(B).localeCompare(String(A)));
+        const sorted = [...rows].sort((a,b)=>{
+          const A=a[key], B=b[key];
+          return isNum ? (sortAsc? A-B : B-A)
+                       : (sortAsc? String(A).localeCompare(String(B)) : String(B).localeCompare(String(A)));
         });
         render(sorted);
-      })
-    );
+      });
+    });
 
-    document.getElementById("search").addEventListener("input", (e) => {
+    // 搜索
+    document.getElementById('search').addEventListener('input', (e)=>{
       const q = e.target.value.toLowerCase();
-      const filtered = data.filter(d =>
-        d.model.toLowerCase().includes(q) || d.organization.toLowerCase().includes(q)
-      );
-      rend
+      const filtered = rows.filter(r => String(r.model).toLowerCase().includes(q));
+      render(filtered);
+    });
+
+    // 加载数据
+    fetch('leaderboard.json')
+      .then(r=>r.json())
+      .then(json=>{
+        // 规范化数值类型
+        rows = json.map(x=>({
+          rank: +x.rank,
+          model: x.model,
+          date: x.date,          // 建议用 YYYY/MM/DD 或 YYYY-MM-DD
+          overall: +x.overall
+        }));
+        // 默认按 rank 升序显示
+        rows.sort((a,b)=>a.rank-b.rank);
+        render(rows);
+      })
+      .catch(err=>{
+        console.error('Failed to load leaderboard.json', err);
+        $tbody.innerHTML = '<tr><td colspan="4">Failed to load leaderboard.json</td></tr>';
+      });
+  </script>
+</body>
+</html>
