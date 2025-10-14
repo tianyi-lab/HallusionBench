@@ -6,7 +6,7 @@
   <title>HallusionBench Leaderboard</title>
   <style>
     :root{--muted:#6b7280;--line:#e5e7eb;--gold:#f59e0b;--silver:#9ca3af;--bronze:#c2410c;}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:960px;margin:40px auto;padding:0 16px}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1100px;margin:40px auto;padding:0 16px}
     h1{margin:0 0 6px}
     .muted{color:var(--muted);font-size:14px;margin-bottom:14px}
     input{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:8px;margin:6px 0 14px}
@@ -18,6 +18,7 @@
     .gold{background:var(--gold);color:#111827}
     .silver{background:var(--silver);color:#111827}
     .bronze{background:var(--bronze);color:#fff}
+    .num{text-align:right}
   </style>
 </head>
 <body>
@@ -31,7 +32,10 @@
         <th data-key="rank" data-num>Rank ⬍</th>
         <th data-key="model">Model ⬍</th>
         <th data-key="date">Eval Date ⬍</th>
-        <th data-key="overall" data-num>Overall ⬍</th>
+        <th class="num" data-key="aAcc" data-num>aAcc ⬍</th>
+        <th class="num" data-key="fAcc" data-num>fAcc ⬍</th>
+        <th class="num" data-key="qAcc" data-num>qAcc ⬍</th>
+        <th class="num" data-key="overall" data-num>Overall ⬍</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -41,9 +45,10 @@
     let rows = [];
     const $tbody = document.querySelector('#tbl tbody');
 
-    // 渲染
+    function fmt(n){ return Number.isFinite(+n) ? (+n).toFixed(1) : n; }
+
     function render(data){
-      $tbody.innerHTML = data.map((r,i)=>{
+      $tbody.innerHTML = data.map(r=>{
         const badge =
           r.rank===1 ? '<span class="badge gold">#1</span>' :
           r.rank===2 ? '<span class="badge silver">#2</span>' :
@@ -52,12 +57,15 @@
           <td>${r.rank}</td>
           <td>${r.model} ${badge}</td>
           <td>${r.date}</td>
-          <td>${(+r.overall).toFixed(1)}</td>
+          <td class="num">${fmt(r.aAcc)}</td>
+          <td class="num">${fmt(r.fAcc)}</td>
+          <td class="num">${fmt(r.qAcc)}</td>
+          <td class="num">${fmt(r.overall)}</td>
         </tr>`;
       }).join('');
     }
 
-    // 排序
+    // sorting
     let sortKey=null, sortAsc=true;
     document.querySelectorAll('th').forEach(th=>{
       th.addEventListener('click', ()=>{
@@ -74,31 +82,27 @@
       });
     });
 
-    // 搜索
+    // search
     document.getElementById('search').addEventListener('input', (e)=>{
       const q = e.target.value.toLowerCase();
       const filtered = rows.filter(r => String(r.model).toLowerCase().includes(q));
       render(filtered);
     });
 
-    // 加载数据
+    // load data
     fetch('leaderboard.json')
       .then(r=>r.json())
       .then(json=>{
-        // 规范化数值类型
         rows = json.map(x=>({
-          rank: +x.rank,
-          model: x.model,
-          date: x.date,          // 建议用 YYYY/MM/DD 或 YYYY-MM-DD
-          overall: +x.overall
+          rank:+x.rank, model:x.model, date:x.date,
+          aAcc:+x.aAcc, fAcc:+x.fAcc, qAcc:+x.qAcc, overall:+x.overall
         }));
-        // 默认按 rank 升序显示
         rows.sort((a,b)=>a.rank-b.rank);
         render(rows);
       })
       .catch(err=>{
         console.error('Failed to load leaderboard.json', err);
-        $tbody.innerHTML = '<tr><td colspan="4">Failed to load leaderboard.json</td></tr>';
+        $tbody.innerHTML = '<tr><td colspan="7">Failed to load leaderboard.json</td></tr>';
       });
   </script>
 </body>
