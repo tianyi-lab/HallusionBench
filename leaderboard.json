@@ -1,13 +1,11 @@
 [
-  { "rank": 1, "model": "SenseNova-V6-Pro",         "date": "2025/05/05", "overall": 67.1 },
-  { "rank": 2, "model": "SenseNova-V6-5-Pro",       "date": "2025/09/03", "overall": 66.7 },
-  { "rank": 3, "model": "GPT-5-20250807",           "date": "2025/08/14", "overall": 65.2 },
-  { "rank": 4, "model": "JT-VL-Chat-V3.0",          "date": "2025/08/04", "overall": 64.4 },
-  { "rank": 5, "model": "Gemini-2.5-Pro",           "date": "2025/04/07", "overall": 64.1 },
-  { "rank": 6, "model": "MiMo-VL-7B",               "date": "2025/07/02", "overall": 63.8 },
-  { "rank": 7, "model": "CongRong-v2.0",            "date": "2025/05/20", "overall": 63.2 },
-  { "rank": 8, "model": "BlueLM-2.6-3B",            "date": "2025/09/17", "overall": 63.1 },
-  { "rank": 9, "model": "GPT-5-mini-20250807",      "date": "2025/08/14", "overall": 62.5 },
-  { "rank": 10,"model": "GPT-5-nano-20250807",      "date": "2025/08/14", "overall": 60.9 },
-  { "rank": 11,"model": "TeleMM",                   "date": "2024/12/31", "overall": 60.6 }
+  { "rank": 1, "model": "MiMo-VL-7B",          "date": "2025/07/02", "aAcc": 75.8, "fAcc": 59.5, "qAcc": 56.0, "overall": 63.8 },
+  { "rank": 2, "model": "BlueLM-2.6-3B",       "date": "2025/09/17", "aAcc": 76.1, "fAcc": 57.2, "qAcc": 56.0, "overall": 63.1 },
+  { "rank": 3, "model": "R-4B",                "date": "2025/08/11", "aAcc": 72.9, "fAcc": 54.0, "qAcc": 53.0, "overall": 60.0 },
+  { "rank": 4, "model": "BlueLM-2.5-3B",       "date": "2025/07/16", "aAcc": 73.7, "fAcc": 52.3, "qAcc": 54.1, "overall": 60.0 },
+  { "rank": 5, "model": "Kimi-VL-A3B-Thinking-2506", "date": "2025/07/02", "aAcc": 73.1, "fAcc": 54.0, "qAcc": 52.3, "overall": 59.8 },
+  { "rank": 6, "model": "nano V2",           "date": "2025/10/14", "aAcc": 71.3, "fAcc": 51.2, "qAcc": 49.3, "overall": 57.2 },
+  { "rank": 7, "model": "Ovis2-16B",           "date": "2025/02/18", "aAcc": 71.6, "fAcc": 51.4, "qAcc": 47.3, "overall": 56.8 },
+  { "rank": 8, "model": "Ovis2-8B",            "date": "2025/02/18", "aAcc": 70.6, "fAcc": 50.9, "qAcc": 47.5, "overall": 56.3 },
+  { "rank": 9, "model": "InternVL3-14B",       "date": "2025/04/14", "aAcc": 70.6, "fAcc": 49.4, "qAcc": 47.7, "overall": 55.9 }
 ]
