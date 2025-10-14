@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HallusionBench Leaderboard</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    h1 { margin-bottom: 8px; }
+    .muted { color: #6b7280; font-size: 14px; margin-bottom: 16px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+    th { cursor: pointer; user-select: none; }
+    tr:hover { background: #f9fafb; }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>HallusionBench Leaderboard 🏆</h1>
+  <div class="muted">Click column headers to sort • Type to filter</div>
+  <input id="search" placeholder="Search model or organization...">
+
+  <table id="leaderboard">
+    <thead>
+      <tr>
+        <th data-key="rank" data-num>Rank ⬍</th>
+        <th data-key="model">Model ⬍</th>
+        <th data-key="organization">Organization ⬍</th>
+        <th data-key="score" data-num>Score ⬍</th>
+        <th data-key="date">Date ⬍</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const data = [
+      { rank: 1, model: "Eagle-1", organization: "NVIDIA", score: 92.4, date: "2025-10-14" },
+      { rank: 2, model: "InternVL 2.5", organization: "Shanghai AI Lab", score: 90.1, date: "2025-10-10" },
+      { rank: 3, model: "Qwen-VL-Plus", organization: "Alibaba", score: 88.7, date: "2025-09-30" },
+    ];
+
+    const tbody = document.querySelector("#leaderboard tbody");
+    const render = (arr) => {
+      tbody.innerHTML = arr.map(
+        r => `<tr><td>${r.rank}</td><td>${r.model}</td><td>${r.organization}</td><td>${r.score}</td><td>${r.date}</td></tr>`
+      ).join("");
+    };
+    render(data);
+
+    let sortKey = null, sortAsc = true;
+    document.querySelectorAll("th").forEach(th =>
+      th.addEventListener("click", () => {
+        const key = th.dataset.key;
+        const num = "num" in th.dataset;
+        sortAsc = sortKey === key ? !sortAsc : true;
+        sortKey = key;
+        const sorted = [...data].sort((a, b) => {
+          const A = a[key], B = b[key];
+          return num ? (sortAsc ? A - B : B - A)
+                     : (sortAsc ? String(A).localeCompare(String(B)) : String(B).localeCompare(String(A)));
+        });
+        render(sorted);
+      })
+    );
+
+    document.getElementById("search").addEventListener("input", (e) => {
+      const q = e.target.value.toLowerCase();
+      const filtered = data.filter(d =>
+        d.model.toLowerCase().includes(q) || d.organization.toLowerCase().includes(q)
+      );
+      rend
